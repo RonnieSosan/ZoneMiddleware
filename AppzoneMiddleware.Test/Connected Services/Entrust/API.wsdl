@@ -1,0 +1,1207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Midesoft/Entrust" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="API" targetNamespace="http://Midesoft/Entrust" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://Midesoft/Entrust" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/EntrustService" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/EntrustService.Models" />
+      <xs:element name="Authenticate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="param" nillable="true" type="q1:AuthRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="AuthenticateResult" nillable="true" type="q2:AuthResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetChallenge">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="param" nillable="true" type="q3:SearchRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetChallengeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="GetChallengeResult" nillable="true" type="q4:AuthResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateChallenge">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="param" nillable="true" type="q5:AuthRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateChallengeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="AuthenticateChallengeResult" nillable="true" type="q6:AuthResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateUserProfile">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="param" nillable="true" type="q7:AuthRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateUserProfileResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="UpdateUserProfileResult" nillable="true" type="q8:AuthResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeactivateToken">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="profile" nillable="true" type="q9:UserProfile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeactivateTokenResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="DeactivateTokenResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SyncroniseToken">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="param" nillable="true" type="q10:SyncRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SyncroniseTokenResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="SyncroniseTokenResult" nillable="true" type="q11:SyncResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateUserProfile">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="param" nillable="true" type="q12:UserProfile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateUserProfileResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="CreateUserProfileResult" nillable="true" type="q13:AuthResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckExistingUser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="profile" nillable="true" type="q14:UserProfile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckExistingUserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CheckExistingUserResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="unlockUser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="profile" nillable="true" type="q15:UserProfile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="unlockUserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="unlockUserResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="lockUser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="profile" nillable="true" type="q16:UserProfile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="lockUserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="lockUserResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="editToken">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="profile" nillable="true" type="q17:UserProfile" />
+            <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/EntrustService.Models" minOccurs="0" name="state" type="q18:TokenState" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="editTokenResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="editTokenResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteUser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="profile" nillable="true" type="q19:UserProfile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteUserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/EntrustService" minOccurs="0" name="DeleteUserResult" nillable="true" type="q20:AuthResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="assignToken">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="serialNumber" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="authCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="assignTokenResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="assignTokenResult" type="xs:boolean" />
+            <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="tokenROAuthenticate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="tokenGroup" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="tokenPin" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="authCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="tokenROAuthenticateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="tokenROAuthenticateResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTokenROSerialNumber">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="groupName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="traceID" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTokenROSerialNumberResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetTokenROSerialNumberResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetGridChellenge">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="groupName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="traceID" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetGridChellengeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetGridChellengeResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateGridChellenge">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="responseID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="authCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="groupName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="traceID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="gridResponse" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pvn" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateGridChellengeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AuthenticateGridChellengeResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ChangePVN">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="responseID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="authCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="groupName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="traceID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="gridResponse" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pvn" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="newPVN" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ChangePVNResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ChangePVNResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EntrustService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EntrustService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/EntrustService.Models" />
+      <xs:complexType name="AuthRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" nillable="true" type="tns:HeaderRequest" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EntrustService.Models" minOccurs="0" name="Profile" nillable="true" type="q1:Profile" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AuthRequest" nillable="true" type="tns:AuthRequest" />
+      <xs:complexType name="HeaderRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AliasID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelationshipName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TraceID" nillable="true" type="xs:string" />
+          <xs:element name="AuthCode" nillable="true" type="xs:string" />
+          <xs:element name="Ip" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="HeaderRequest" nillable="true" type="tns:HeaderRequest" />
+      <xs:complexType name="AuthResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" nillable="true" type="tns:HeaderResponse" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EntrustService.Models" minOccurs="0" name="Profile" nillable="true" type="q2:Profile" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AuthResponse" nillable="true" type="tns:AuthResponse" />
+      <xs:complexType name="HeaderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResultCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ResultMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TraceID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="HeaderResponse" nillable="true" type="tns:HeaderResponse" />
+      <xs:complexType name="SearchRequest">
+        <xs:sequence>
+          <xs:element name="Header" nillable="true" type="tns:HeaderRequest" />
+          <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+          <xs:element name="UserName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EntrustService.Models" minOccurs="0" name="AuthenticationMethods" nillable="true" type="q3:ArrayOfAuthenticationMethod" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SearchRequest" nillable="true" type="tns:SearchRequest" />
+      <xs:complexType name="UserProfile">
+        <xs:sequence>
+          <xs:element name="UserId" nillable="true" type="xs:string" />
+          <xs:element name="Fullname" nillable="true" type="xs:string" />
+          <xs:element name="Email" nillable="true" type="xs:string" />
+          <xs:element name="Phone" nillable="true" type="xs:string" />
+          <xs:element name="Group" nillable="true" type="xs:string" />
+          <xs:element name="SerialNumber" nillable="true" type="xs:string" />
+          <xs:element name="RequestHeader" nillable="true" type="tns:HeaderRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserProfile" nillable="true" type="tns:UserProfile" />
+      <xs:complexType name="SyncRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FirstResponse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Header" nillable="true" type="tns:HeaderRequest" />
+          <xs:element minOccurs="0" name="SecondResponse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SyncRequest" nillable="true" type="tns:SyncRequest" />
+      <xs:complexType name="SyncResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Header" nillable="true" type="tns:HeaderResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SyncResponse" nillable="true" type="tns:SyncResponse" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EntrustService.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EntrustService.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/IdentityGuardAuthServiceV8API" />
+      <xs:complexType name="Profile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AuthenticationMethods" nillable="true" type="tns:ArrayOfAuthenticationMethod" />
+          <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:Response" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Profile" nillable="true" type="tns:Profile" />
+      <xs:complexType name="ArrayOfAuthenticationMethod">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthenticationMethod" nillable="true" type="tns:AuthenticationMethod" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfAuthenticationMethod" nillable="true" type="tns:ArrayOfAuthenticationMethod" />
+      <xs:complexType name="AuthenticationMethod">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/IdentityGuardAuthServiceV8API" minOccurs="0" name="AuthType" type="q1:AuthenticationType" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IdentityGuardAuthServiceV8API" minOccurs="0" name="AuthenticationChallenge" nillable="true" type="q2:GenericChallenge" />
+          <xs:element minOccurs="0" name="Challenge" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NewPVN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NewPassCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PVN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PVNChangeRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PVNLength" type="xs:int" />
+          <xs:element minOccurs="0" name="PVNRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PassCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PassCodeChangeRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Type" type="tns:AuthType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AuthenticationMethod" nillable="true" type="tns:AuthenticationMethod" />
+      <xs:simpleType name="AuthType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="GRID" />
+          <xs:enumeration value="QA" />
+          <xs:enumeration value="OTP" />
+          <xs:enumeration value="TOKENRO" />
+          <xs:enumeration value="TOKENCR" />
+          <xs:enumeration value="EXTERNAL" />
+          <xs:enumeration value="PASSWORD" />
+          <xs:enumeration value="CERTIFICATE" />
+          <xs:enumeration value="NONE" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="AuthType" nillable="true" type="tns:AuthType" />
+      <xs:complexType name="Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Response" nillable="true" type="tns:Response" />
+      <xs:simpleType name="TokenState">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CURRENT" />
+          <xs:enumeration value="HOLD" />
+          <xs:enumeration value="HOLD_PENDING" />
+          <xs:enumeration value="CANCELED" />
+          <xs:enumeration value="UNKNOWN" />
+          <xs:enumeration value="PENDING" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TokenState" nillable="true" type="tns:TokenState" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IdentityGuardAuthServiceV8API" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IdentityGuardAuthServiceV8API" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:simpleType name="AuthenticationType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="GRID" />
+          <xs:enumeration value="QA" />
+          <xs:enumeration value="OTP" />
+          <xs:enumeration value="TOKENRO" />
+          <xs:enumeration value="TOKENCR" />
+          <xs:enumeration value="EXTERNAL" />
+          <xs:enumeration value="PASSWORD" />
+          <xs:enumeration value="CERTIFICATE" />
+          <xs:enumeration value="NONE" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="AuthenticationType" nillable="true" type="tns:AuthenticationType" />
+      <xs:complexType name="GenericChallenge">
+        <xs:sequence>
+          <xs:element name="authenticationSecretsField" nillable="true" type="tns:ArrayOfNameValue" />
+          <xs:element name="certificateChallengeField" nillable="true" type="tns:CertificateChallenge" />
+          <xs:element name="certificateField" nillable="true" type="tns:CertificateData" />
+          <xs:element name="challengeRequestResultField" type="tns:ChallengeRequestResult" />
+          <xs:element name="disableChallengeRetentionField" nillable="true" type="xs:boolean" />
+          <xs:element name="externalChallengeField" nillable="true" type="tns:ExternalChallenge" />
+          <xs:element name="gridChallengeField" nillable="true" type="tns:ChallengeSet" />
+          <xs:element name="groupField" nillable="true" type="xs:string" />
+          <xs:element name="iPLocationField" nillable="true" type="tns:IPLocation" />
+          <xs:element name="machineSecretField" nillable="true" type="tns:MachineSecret" />
+          <xs:element name="machineSecretPolicyField" nillable="true" type="tns:MachineSecretPolicy" />
+          <xs:element name="oTPChallengeField" nillable="true" type="tns:OTPChallenge" />
+          <xs:element name="pVNInfoField" nillable="true" type="tns:PVNInfo" />
+          <xs:element name="passwordChallengeField" nillable="true" type="tns:PasswordChallenge" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="qAChallengeField" nillable="true" type="q1:ArrayOfstring" />
+          <xs:element name="riskScoringResultField" nillable="true" type="tns:RiskScoringResult" />
+          <xs:element name="sharedSecretsField" nillable="true" type="tns:ArrayOfSharedSecret" />
+          <xs:element name="tokenChallengeField" nillable="true" type="tns:TokenChallenge" />
+          <xs:element name="transactionIdField" nillable="true" type="xs:string" />
+          <xs:element name="typeField" nillable="true" type="tns:AuthenticationType" />
+          <xs:element name="warningFaultField" nillable="true" type="tns:AuthenticationFault" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GenericChallenge" nillable="true" type="tns:GenericChallenge" />
+      <xs:complexType name="ArrayOfNameValue">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NameValue" nillable="true" type="tns:NameValue" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfNameValue" nillable="true" type="tns:ArrayOfNameValue" />
+      <xs:complexType name="NameValue">
+        <xs:sequence>
+          <xs:element name="nameField" nillable="true" type="xs:string" />
+          <xs:element name="valueField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NameValue" nillable="true" type="tns:NameValue" />
+      <xs:complexType name="CertificateChallenge">
+        <xs:sequence>
+          <xs:element name="certificatesField" nillable="true" type="tns:ArrayOfCertificateData" />
+          <xs:element name="challengeField" nillable="true" type="xs:string" />
+          <xs:element name="hashingAlgorithmField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CertificateChallenge" nillable="true" type="tns:CertificateChallenge" />
+      <xs:complexType name="ArrayOfCertificateData">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CertificateData" nillable="true" type="tns:CertificateData" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCertificateData" nillable="true" type="tns:ArrayOfCertificateData" />
+      <xs:complexType name="CertificateData">
+        <xs:sequence>
+          <xs:element name="expiryDateField" type="xs:dateTime" />
+          <xs:element name="issueDateField" type="xs:dateTime" />
+          <xs:element name="issuerDNField" nillable="true" type="xs:string" />
+          <xs:element name="serialNumberField" nillable="true" type="xs:string" />
+          <xs:element name="subjectDNField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CertificateData" nillable="true" type="tns:CertificateData" />
+      <xs:simpleType name="ChallengeRequestResult">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AUTHENTICATED" />
+          <xs:enumeration value="CHALLENGE" />
+          <xs:enumeration value="REJECT" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ChallengeRequestResult" nillable="true" type="tns:ChallengeRequestResult" />
+      <xs:complexType name="ExternalChallenge">
+        <xs:sequence>
+          <xs:element name="challengeField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ExternalChallenge" nillable="true" type="tns:ExternalChallenge" />
+      <xs:complexType name="ChallengeSet">
+        <xs:sequence>
+          <xs:element name="cardCellAlphabetField" nillable="true" type="xs:string" />
+          <xs:element name="cardCellSizeField" type="xs:int" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="cardSerialNumbersField" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element name="challengeField" nillable="true" type="tns:ArrayOfChallenge" />
+          <xs:element name="temporaryPinCellAlphabetField" nillable="true" type="xs:string" />
+          <xs:element name="temporaryPinCellSizeField" type="xs:int" />
+          <xs:element name="temporaryPinChallengeSizeField" type="xs:int" />
+          <xs:element name="userHasTemporaryPinField" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ChallengeSet" nillable="true" type="tns:ChallengeSet" />
+      <xs:complexType name="ArrayOfChallenge">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Challenge" nillable="true" type="tns:Challenge" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfChallenge" nillable="true" type="tns:ArrayOfChallenge" />
+      <xs:complexType name="Challenge">
+        <xs:sequence>
+          <xs:element name="columnField" type="xs:int" />
+          <xs:element name="rowField" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Challenge" nillable="true" type="tns:Challenge" />
+      <xs:complexType name="IPLocation">
+        <xs:sequence>
+          <xs:element name="cityField" nillable="true" type="xs:string" />
+          <xs:element name="countryField" nillable="true" type="xs:string" />
+          <xs:element name="countryNameField" nillable="true" type="xs:string" />
+          <xs:element name="iPAddressField" nillable="true" type="xs:string" />
+          <xs:element name="iSPField" nillable="true" type="xs:string" />
+          <xs:element name="latitudeField" nillable="true" type="xs:float" />
+          <xs:element name="longitudeField" nillable="true" type="xs:float" />
+          <xs:element name="privateAddressField" type="xs:boolean" />
+          <xs:element name="regionField" nillable="true" type="xs:string" />
+          <xs:element name="regionNameField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IPLocation" nillable="true" type="tns:IPLocation" />
+      <xs:complexType name="MachineSecret">
+        <xs:sequence>
+          <xs:element name="applicationDataField" nillable="true" type="tns:ArrayOfNameValue" />
+          <xs:element name="machineLabelField" nillable="true" type="xs:string" />
+          <xs:element name="machineNonceField" nillable="true" type="xs:string" />
+          <xs:element name="sequenceNonceField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MachineSecret" nillable="true" type="tns:MachineSecret" />
+      <xs:complexType name="MachineSecretPolicy">
+        <xs:sequence>
+          <xs:element name="appDataRequiredField" type="xs:int" />
+          <xs:element name="machineNonceRequiredField" type="xs:boolean" />
+          <xs:element name="maxMachineSecretSizeField" type="xs:int" />
+          <xs:element name="sequenceNonceRequiredField" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MachineSecretPolicy" nillable="true" type="tns:MachineSecretPolicy" />
+      <xs:complexType name="OTPChallenge">
+        <xs:sequence>
+          <xs:element name="deliveryMechanismFailedField" nillable="true" type="tns:ArrayOfDeliveryMechanism" />
+          <xs:element name="deliveryMechanismFailureReasonField" nillable="true" type="tns:ArrayOfAuthenticationFault" />
+          <xs:element name="deliveryMechanismField" nillable="true" type="tns:ArrayOfDeliveryMechanism" />
+          <xs:element name="deliveryMechanismUsedField" nillable="true" type="tns:ArrayOfDeliveryMechanism" />
+          <xs:element name="dynamicRefreshField" type="xs:boolean" />
+          <xs:element name="manualDeliveryRequiredField" nillable="true" type="xs:boolean" />
+          <xs:element name="needsDeliveryForAuthenticateField" nillable="true" type="xs:boolean" />
+          <xs:element name="needsDeliveryForChallengeField" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="OTPChallenge" nillable="true" type="tns:OTPChallenge" />
+      <xs:complexType name="ArrayOfDeliveryMechanism">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DeliveryMechanism" nillable="true" type="tns:DeliveryMechanism" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfDeliveryMechanism" nillable="true" type="tns:ArrayOfDeliveryMechanism" />
+      <xs:complexType name="DeliveryMechanism">
+        <xs:sequence>
+          <xs:element name="contactInfoLabelField" nillable="true" type="xs:string" />
+          <xs:element name="defaultContactInfoField" type="xs:boolean" />
+          <xs:element name="deliveryConfigurationNameField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DeliveryMechanism" nillable="true" type="tns:DeliveryMechanism" />
+      <xs:complexType name="ArrayOfAuthenticationFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthenticationFault" nillable="true" type="tns:AuthenticationFault" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfAuthenticationFault" nillable="true" type="tns:ArrayOfAuthenticationFault" />
+      <xs:complexType name="AuthenticationFault">
+        <xs:sequence>
+          <xs:element name="errorCodeField" type="tns:ErrorCode" />
+          <xs:element name="errorMessageField" nillable="true" type="xs:string" />
+          <xs:element name="idField" nillable="true" type="xs:string" />
+          <xs:element name="internalCodeField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AuthenticationFault" nillable="true" type="tns:AuthenticationFault" />
+      <xs:simpleType name="ErrorCode">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="INVALID_RESPONSE" />
+          <xs:enumeration value="NO_ACTIVE_CARDS" />
+          <xs:enumeration value="NO_VALID_CARDS" />
+          <xs:enumeration value="CARD_SUPERSEDED" />
+          <xs:enumeration value="USER_DOES_NOT_EXIST" />
+          <xs:enumeration value="USERNAME_NOT_UNIQUE" />
+          <xs:enumeration value="PIN_EXPIRED" />
+          <xs:enumeration value="PIN_MAX_USES" />
+          <xs:enumeration value="USER_NO_CHALLENGE" />
+          <xs:enumeration value="INVALID_PARAMETER" />
+          <xs:enumeration value="ANON_AUTH_DISABLED" />
+          <xs:enumeration value="SYSTEM_ERROR" />
+          <xs:enumeration value="USER_UPDATE_ERROR" />
+          <xs:enumeration value="SHARED_SECRET_MAX_NUM" />
+          <xs:enumeration value="SHARED_SECRET_MAX_VALUE_SIZE" />
+          <xs:enumeration value="SHARED_SECRET_REMOVE_ERROR" />
+          <xs:enumeration value="SHARED_SECRET_SET_ERROR" />
+          <xs:enumeration value="SHARED_SECRET_GET_ERROR" />
+          <xs:enumeration value="USER_LOCKED" />
+          <xs:enumeration value="AUTH_FAILED_USER_LOCKED" />
+          <xs:enumeration value="QA_NOT_ENOUGH_QUESTIONS" />
+          <xs:enumeration value="QA_INVALID_NUM_WRONG_ANSWERS_ALLOWED_VALUE" />
+          <xs:enumeration value="AUTH_TYPE_NOT_ALLOWED" />
+          <xs:enumeration value="NO_OTP" />
+          <xs:enumeration value="OTP_EXPIRED" />
+          <xs:enumeration value="OTP_DISABLED" />
+          <xs:enumeration value="OTP_DELIVERY_FAILED" />
+          <xs:enumeration value="NO_ACTIVE_TOKENS" />
+          <xs:enumeration value="NO_VALID_TOKENS" />
+          <xs:enumeration value="INVALID_TOKEN_PIN_CHANGE" />
+          <xs:enumeration value="NO_EXTERNAL_AUTH_CONFIGURED" />
+          <xs:enumeration value="USER_SUSPENDED" />
+          <xs:enumeration value="ACTIVATION_EXPIRED" />
+          <xs:enumeration value="NO_ACTIVE_CARD_AFTER_ACTIVATION" />
+          <xs:enumeration value="NO_ACTIVE_TOKEN_AFTER_ACTIVATION" />
+          <xs:enumeration value="NO_PASSWORD" />
+          <xs:enumeration value="PASSWORD_CHANGE_REQUIRED" />
+          <xs:enumeration value="PASSWORD_CHANGE_FAILED" />
+          <xs:enumeration value="PVN_REQUIRED" />
+          <xs:enumeration value="PVN_INVALID" />
+          <xs:enumeration value="PVN_CHANGE_REQUIRED" />
+          <xs:enumeration value="PVN_CHANGE_INVALID" />
+          <xs:enumeration value="NOT_SUPPORTED" />
+          <xs:enumeration value="INVALID_IP_ADDRESS" />
+          <xs:enumeration value="INVALID_CERTIFICATE" />
+          <xs:enumeration value="TRANSACTION_VALIDATION_ERROR" />
+          <xs:enumeration value="TRANSACTION_VALIDATION_ERROR_USER_LOCKED" />
+          <xs:enumeration value="TRANSACTION_RECEIPT_SIGNATURE_FAILURE" />
+          <xs:enumeration value="NO_ACTIVE_CERTIFICATES" />
+          <xs:enumeration value="REPOSITORY_ACCOUNT_DISABLED" />
+          <xs:enumeration value="REPOSITORY_ACCOUNT_EXPIRED" />
+          <xs:enumeration value="FUTURE_ERROR" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ErrorCode" nillable="true" type="tns:ErrorCode" />
+      <xs:complexType name="PVNInfo">
+        <xs:sequence>
+          <xs:element name="availableField" nillable="true" type="xs:boolean" />
+          <xs:element name="changeRequiredField" nillable="true" type="xs:boolean" />
+          <xs:element name="lengthField" type="xs:int" />
+          <xs:element name="requiredField" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PVNInfo" nillable="true" type="tns:PVNInfo" />
+      <xs:complexType name="PasswordChallenge">
+        <xs:sequence>
+          <xs:element name="allowChangeAfterDateField" type="xs:dateTime" />
+          <xs:element name="changeRequiredField" nillable="true" type="xs:boolean" />
+          <xs:element name="expiryDateField" type="xs:dateTime" />
+          <xs:element name="passwordRulesField" nillable="true" type="tns:PasswordRules" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PasswordChallenge" nillable="true" type="tns:PasswordChallenge" />
+      <xs:complexType name="PasswordRules">
+        <xs:sequence>
+          <xs:element name="lowerCaseRequiredField" type="xs:boolean" />
+          <xs:element name="minimumLengthField" type="xs:int" />
+          <xs:element name="numberRequiredField" type="xs:boolean" />
+          <xs:element name="specialCharRequiredField" type="xs:boolean" />
+          <xs:element name="upperCaseRequiredField" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PasswordRules" nillable="true" type="tns:PasswordRules" />
+      <xs:complexType name="RiskScoringResult">
+        <xs:sequence>
+          <xs:element name="certificateAuthenticationPassedField" nillable="true" type="xs:boolean" />
+          <xs:element name="certificateAuthenticationStatusField" nillable="true" type="tns:CertificateAuthenticationStatus" />
+          <xs:element name="externalRiskScoreStatusField" nillable="true" type="tns:ExternalRiskScoreResult" />
+          <xs:element name="iPAuthenticationPassedField" nillable="true" type="xs:boolean" />
+          <xs:element name="iPAuthenticationStatusField" nillable="true" type="tns:IPAuthenticationStatus" />
+          <xs:element name="machineAuthenticationPassedField" nillable="true" type="xs:boolean" />
+          <xs:element name="machineAuthenticationStatusField" nillable="true" type="tns:MachineAuthenticationStatus" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RiskScoringResult" nillable="true" type="tns:RiskScoringResult" />
+      <xs:complexType name="CertificateAuthenticationStatus">
+        <xs:sequence>
+          <xs:element name="certificateRegisteredField" type="xs:boolean" />
+          <xs:element name="certificateValidField" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CertificateAuthenticationStatus" nillable="true" type="tns:CertificateAuthenticationStatus" />
+      <xs:simpleType name="ExternalRiskScoreResult">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="PASS" />
+          <xs:enumeration value="FAIL" />
+          <xs:enumeration value="NEITHER" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ExternalRiskScoreResult" nillable="true" type="tns:ExternalRiskScoreResult" />
+      <xs:complexType name="IPAuthenticationStatus">
+        <xs:sequence>
+          <xs:element name="countryBlacklistField" nillable="true" type="xs:boolean" />
+          <xs:element name="expectedLocationsField" nillable="true" type="xs:boolean" />
+          <xs:element name="iPBlacklistField" nillable="true" type="xs:boolean" />
+          <xs:element name="locationHistoryField" nillable="true" type="xs:boolean" />
+          <xs:element name="velocityField" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IPAuthenticationStatus" nillable="true" type="tns:IPAuthenticationStatus" />
+      <xs:complexType name="MachineAuthenticationStatus">
+        <xs:sequence>
+          <xs:element name="appDataFailedField" type="xs:boolean" />
+          <xs:element name="machineNonceFailedField" type="xs:boolean" />
+          <xs:element name="numFailedApplicationDataField" type="xs:int" />
+          <xs:element name="numRequiredApplicationDataField" type="xs:int" />
+          <xs:element name="secretExpiredField" type="xs:boolean" />
+          <xs:element name="sequenceNonceFailedField" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MachineAuthenticationStatus" nillable="true" type="tns:MachineAuthenticationStatus" />
+      <xs:complexType name="ArrayOfSharedSecret">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SharedSecret" nillable="true" type="tns:SharedSecret" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfSharedSecret" nillable="true" type="tns:ArrayOfSharedSecret" />
+      <xs:complexType name="SharedSecret">
+        <xs:sequence>
+          <xs:element name="nameField" nillable="true" type="xs:string" />
+          <xs:element name="valueField" nillable="true" type="xs:string" />
+          <xs:element name="writeOnlyField" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SharedSecret" nillable="true" type="tns:SharedSecret" />
+      <xs:complexType name="TokenChallenge">
+        <xs:sequence>
+          <xs:element name="challengeField" nillable="true" type="xs:string" />
+          <xs:element name="hasTemporaryPINField" nillable="true" type="xs:boolean" />
+          <xs:element name="temporaryPINCellAlphabetField" nillable="true" type="xs:string" />
+          <xs:element name="temporaryPINCellSizeField" nillable="true" type="xs:int" />
+          <xs:element name="temporaryPINChallengeSizeField" nillable="true" type="xs:int" />
+          <xs:element name="tokensField" nillable="true" type="tns:ArrayOfTokenData" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TokenChallenge" nillable="true" type="tns:TokenChallenge" />
+      <xs:complexType name="ArrayOfTokenData">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TokenData" nillable="true" type="tns:TokenData" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfTokenData" nillable="true" type="tns:ArrayOfTokenData" />
+      <xs:complexType name="TokenData">
+        <xs:sequence>
+          <xs:element name="deliveryStatusField" type="tns:TokenDeliveryStatus" />
+          <xs:element name="serialNumberField" nillable="true" type="xs:string" />
+          <xs:element name="setField" nillable="true" type="xs:string" />
+          <xs:element name="supportsDataSignatureField" type="xs:boolean" />
+          <xs:element name="supportsDeliveryAndSignatureField" type="xs:boolean" />
+          <xs:element name="vendorIdField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TokenData" nillable="true" type="tns:TokenData" />
+      <xs:simpleType name="TokenDeliveryStatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="OK" />
+          <xs:enumeration value="ERROR" />
+          <xs:enumeration value="NONE" />
+          <xs:enumeration value="NA" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TokenDeliveryStatus" nillable="true" type="tns:TokenDeliveryStatus" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IAPI_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_GetChallenge_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChallenge" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_GetChallenge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChallengeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_AuthenticateChallenge_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateChallenge" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_AuthenticateChallenge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateChallengeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_UpdateUserProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserProfile" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_UpdateUserProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_DeactivateToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateToken" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_DeactivateToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_SyncroniseToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:SyncroniseToken" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_SyncroniseToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SyncroniseTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_CreateUserProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserProfile" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_CreateUserProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_CheckExistingUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckExistingUser" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_CheckExistingUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckExistingUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_unlockUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:unlockUser" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_unlockUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:unlockUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_lockUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:lockUser" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_lockUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:lockUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_editToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:editToken" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_editToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_assignToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:assignToken" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_assignToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:assignTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_tokenROAuthenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:tokenROAuthenticate" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_tokenROAuthenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:tokenROAuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_GetTokenROSerialNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTokenROSerialNumber" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_GetTokenROSerialNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTokenROSerialNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_GetGridChellenge_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGridChellenge" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_GetGridChellenge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGridChellengeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_AuthenticateGridChellenge_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateGridChellenge" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_AuthenticateGridChellenge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateGridChellengeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_ChangePVN_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePVN" />
+  </wsdl:message>
+  <wsdl:message name="IAPI_ChangePVN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePVNResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAPI">
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/Authenticate" message="tns:IAPI_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/AuthenticateResponse" message="tns:IAPI_Authenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChallenge">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/GetChallenge" message="tns:IAPI_GetChallenge_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/GetChallengeResponse" message="tns:IAPI_GetChallenge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateChallenge">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/AuthenticateChallenge" message="tns:IAPI_AuthenticateChallenge_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/AuthenticateChallengeResponse" message="tns:IAPI_AuthenticateChallenge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserProfile">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/UpdateUserProfile" message="tns:IAPI_UpdateUserProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/UpdateUserProfileResponse" message="tns:IAPI_UpdateUserProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateToken">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/DeactivateToken" message="tns:IAPI_DeactivateToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/DeactivateTokenResponse" message="tns:IAPI_DeactivateToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncroniseToken">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/SyncroniseToken" message="tns:IAPI_SyncroniseToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/SyncroniseTokenResponse" message="tns:IAPI_SyncroniseToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserProfile">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/CreateUserProfile" message="tns:IAPI_CreateUserProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/CreateUserProfileResponse" message="tns:IAPI_CreateUserProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistingUser">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/CheckExistingUser" message="tns:IAPI_CheckExistingUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/CheckExistingUserResponse" message="tns:IAPI_CheckExistingUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="unlockUser">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/unlockUser" message="tns:IAPI_unlockUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/unlockUserResponse" message="tns:IAPI_unlockUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="lockUser">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/lockUser" message="tns:IAPI_lockUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/lockUserResponse" message="tns:IAPI_lockUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editToken">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/editToken" message="tns:IAPI_editToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/editTokenResponse" message="tns:IAPI_editToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/DeleteUser" message="tns:IAPI_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/DeleteUserResponse" message="tns:IAPI_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="assignToken">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/assignToken" message="tns:IAPI_assignToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/assignTokenResponse" message="tns:IAPI_assignToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="tokenROAuthenticate">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/tokenROAuthenticate" message="tns:IAPI_tokenROAuthenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/tokenROAuthenticateResponse" message="tns:IAPI_tokenROAuthenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTokenROSerialNumber">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/GetTokenROSerialNumber" message="tns:IAPI_GetTokenROSerialNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/GetTokenROSerialNumberResponse" message="tns:IAPI_GetTokenROSerialNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGridChellenge">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/GetGridChellenge" message="tns:IAPI_GetGridChellenge_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/GetGridChellengeResponse" message="tns:IAPI_GetGridChellenge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateGridChellenge">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/AuthenticateGridChellenge" message="tns:IAPI_AuthenticateGridChellenge_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/AuthenticateGridChellengeResponse" message="tns:IAPI_AuthenticateGridChellenge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePVN">
+      <wsdl:input wsaw:Action="http://Midesoft/Entrust/IAPI/ChangePVN" message="tns:IAPI_ChangePVN_InputMessage" />
+      <wsdl:output wsaw:Action="http://Midesoft/Entrust/IAPI/ChangePVNResponse" message="tns:IAPI_ChangePVN_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAPI" type="tns:IAPI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChallenge">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/GetChallenge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateChallenge">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/AuthenticateChallenge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserProfile">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/UpdateUserProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateToken">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/DeactivateToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncroniseToken">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/SyncroniseToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserProfile">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/CreateUserProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistingUser">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/CheckExistingUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unlockUser">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/unlockUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lockUser">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/lockUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editToken">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/editToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="assignToken">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/assignToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tokenROAuthenticate">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/tokenROAuthenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTokenROSerialNumber">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/GetTokenROSerialNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGridChellenge">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/GetGridChellenge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateGridChellenge">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/AuthenticateGridChellenge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePVN">
+      <soap:operation soapAction="http://Midesoft/Entrust/IAPI/ChangePVN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="API">
+    <wsdl:port name="BasicHttpBinding_IAPI" binding="tns:BasicHttpBinding_IAPI">
+      <soap:address location="http://10.0.33.62/Test_EntrustBridge/API.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

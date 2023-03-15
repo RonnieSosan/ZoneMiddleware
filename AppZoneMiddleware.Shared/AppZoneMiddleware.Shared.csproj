@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DD364F3-3413-4483-8A13-1849A3419AAE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppZoneMiddleware.Shared</RootNamespace>
+    <AssemblyName>AppZoneMiddleware.Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elasticsearch.Net, Version=6.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elasticsearch.Net.6.2.0\lib\net46\Elasticsearch.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nest, Version=6.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\NEST.6.2.0\lib\net46\Nest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.8\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.8.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Settings.AppSettings, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Settings.AppSettings.2.1.2\lib\net45\Serilog.Settings.AppSettings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Elasticsearch, Version=6.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Elasticsearch.6.5.0\lib\net45\Serilog.Sinks.Elasticsearch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.4.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Graylog, Version=1.5.1.0, Culture=neutral, PublicKeyToken=1011d850eeda7898, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Graylog.1.5.1\lib\net46\Serilog.Sinks.Graylog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.PeriodicBatching.2.1.1\lib\net45\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.RollingFile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.RollingFile.3.3.0\lib\net45\Serilog.Sinks.RollingFile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.0.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.0.0\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Extensions.ExecutionContextScoping, Version=4.0.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Extensions.ExecutionContextScoping.4.0.0\lib\net45\SimpleInjector.Extensions.ExecutionContextScoping.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\IAPISecurityService.cs" />
+    <Compile Include="Contracts\IAriiyaTicketService.cs" />
+    <Compile Include="Contracts\IBeneficiaryService.cs" />
+    <Compile Include="Contracts\IBillPayment.cs" />
+    <Compile Include="Contracts\ICardService.cs" />
+    <Compile Include="Contracts\IAccountServices.cs" />
+    <Compile Include="Contracts\IAirtimeTopup.cs" />
+    <Compile Include="Contracts\IBankTransfer.cs" />
+    <Compile Include="Contracts\ICoreBanking.cs" />
+    <Compile Include="Contracts\INairaBoxService.cs" />
+    <Compile Include="Contracts\IInvestmentService.cs" />
+    <Compile Include="Contracts\IMailService.cs" />
+    <Compile Include="Contracts\IOtpManager.cs" />
+    <Compile Include="Contracts\IPaymentServices.cs" />
+    <Compile Include="Contracts\IPayCode.cs" />
+    <Compile Include="Contracts\IPasswordManager.cs" />
+    <Compile Include="Contracts\IPinManager.cs" />
+    <Compile Include="Contracts\IPinService.cs" />
+    <Compile Include="Contracts\IProfileManager.cs" />
+    <Compile Include="Contracts\ISecondaryAuthentication.cs" />
+    <Compile Include="Contracts\ISMSSender.cs" />
+    <Compile Include="Contracts\ITokenManager.cs" />
+    <Compile Include="Contracts\IWakanowService.cs" />
+    <Compile Include="Contracts\ProxyAuthentication\IProxyRequestAuthentication.cs" />
+    <Compile Include="DAO\PostCardDAO.cs" />
+    <Compile Include="Entities\ActivateForeignTrxRequest.cs" />
+    <Compile Include="Entities\AllowedCountriesOnPostilionRequest.cs" />
+    <Compile Include="Entities\AllowedCountriesOnPostilionResponse.cs" />
+    <Compile Include="Entities\AriiyaGetEventsResponse.cs" />
+    <Compile Include="Entities\AriiyaOrderResponse.cs" />
+    <Compile Include="Entities\AriiyaTicketOrderRequest.cs" />
+    <Compile Include="Entities\AuthenticationProxy\AddAPISecResponse.cs" />
+    <Compile Include="Entities\AuthenticationProxy\ApiProxyRequest.cs" />
+    <Compile Include="Entities\AuthenticationProxy\ApiProxyResponse.cs" />
+    <Compile Include="Entities\AuthenticationProxy\ApiSecuritySpec.cs" />
+    <Compile Include="Entities\AuthenticationProxy\AuthenticationData.cs" />
+    <Compile Include="Entities\AuthenticationProxy\HealthCheckRequest.cs" />
+    <Compile Include="Entities\AuthenticationProxy\HealthCheckResponse.cs" />
+    <Compile Include="Entities\AuthenticationProxy\PayLoadData.cs" />
+    <Compile Include="Entities\AuthenticationProxy\PayLoadDataHeaders.cs" />
+    <Compile Include="Entities\BeneficiaryService\AddBenefciariesRequest.cs" />
+    <Compile Include="Entities\BeneficiaryService\GetBeneficiariesResponse.cs" />
+    <Compile Include="Entities\BeneficiaryService\RemoveBeneficiaryRequest.cs" />
+    <Compile Include="Entities\BillerCustomerValidation.cs" />
+    <Compile Include="Entities\BillPaymentAdviceRequest.cs" />
+    <Compile Include="Entities\BillPaymentStatusResponse.cs" />
+    <Compile Include="Entities\BillPaymnetAdviceResponse.cs" />
+    <Compile Include="Entities\CustomerValidationResponse.cs" />
+    <Compile Include="Entities\LifestyleDebitRequest.cs" />
+    <Compile Include="Entities\LifestyleDebitResponse.cs" />
+    <Compile Include="Entities\NairaBox\Cinema.cs" />
+    <Compile Include="Entities\NairaBox\Event.cs" />
+    <Compile Include="Entities\NairaBox\GetByCinemaResponse.cs" />
+    <Compile Include="Entities\NairaBox\GetEventsResponse.cs" />
+    <Compile Include="Entities\NairaBox\GetMovieDetailsResponse.cs" />
+    <Compile Include="Entities\NairaBox\GetMoviesResponse.cs" />
+    <Compile Include="Entities\NairaBox\GetNairaBoxMovieResponse.cs" />
+    <Compile Include="Entities\NairaBox\GetShowtimeRequest.cs" />
+    <Compile Include="Entities\NairaBox\GetShowtimeResponse.cs" />
+    <Compile Include="Entities\NairaBox\NairaBoxMovie.cs" />
+    <Compile Include="Entities\NairaBox\PurcaseTicketResponse.cs" />
+    <Compile Include="Entities\NairaBox\PurchaseTicketRequest.cs" />
+    <Compile Include="Entities\NairaBox\Showtime.cs" />
+    <Compile Include="Entities\NairaBox\VerifyTicketResponse.cs" />
+    <Compile Include="Entities\PinRetrievalRequest.cs" />
+    <Compile Include="Entities\PinRetrievalResponse.cs" />
+    <Compile Include="Entities\UserBeneficiaries.cs" />
+    <Compile Include="Entities\BlockFundRequest.cs" />
+    <Compile Include="Entities\Card.cs" />
+    <Compile Include="Entities\CardRequest.cs" />
+    <Compile Include="Entities\CreateAndActivateVirtualCardRequest.cs" />
+    <Compile Include="Entities\CreateAndActivateVirtualCardResponse.cs" />
+    <Compile Include="Entities\CreateWalletRequest.cs" />
+    <Compile Include="Entities\CreditCheckRequest.cs" />
+    <Compile Include="Entities\ExistingAccountHolderRequest.cs" />
+    <Compile Include="Entities\ExistingAccountHolderResponse.cs" />
+    <Compile Include="Entities\FixedDepositRequest.cs" />
+    <Compile Include="Entities\FundAccountRequest.cs" />
+    <Compile Include="Entities\FundAccountResponse.cs" />
+    <Compile Include="Entities\GetQuickTellerBillerItemsRequest.cs" />
+    <Compile Include="Entities\GetQuickTellerBillerItemsResponse.cs" />
+    <Compile Include="Entities\GetQuickTellerBillersRequest.cs" />
+    <Compile Include="Entities\GetQuickTellerBillersResponse.cs" />
+    <Compile Include="Entities\HotlistCardRequest.cs" />
+    <Compile Include="Entities\InterswitchBaseResponse.cs" />
+    <Compile Include="Entities\InterswitchPaycodeEntity.cs" />
+    <Compile Include="Entities\MPassPaymentRequest.cs" />
+    <Compile Include="Entities\MPassPaymentResponse.cs" />
+    <Compile Include="Entities\MPassRegisterUserRequest.cs" />
+    <Compile Include="Entities\MPassRegisterUserResponse.cs" />
+    <Compile Include="Entities\Paymentitem.cs" />
+    <Compile Include="Entities\PNDRequest.cs" />
+    <Compile Include="Entities\QuicktellerBillerCategories.cs" />
+    <Compile Include="Entities\QuicktellerBillerList.cs" />
+    <Compile Include="Entities\QuicktellerBillerRequest.cs" />
+    <Compile Include="Entities\QuickTellerBillsPaymentAdviceRequest.cs" />
+    <Compile Include="Entities\QuickTellerBillsPaymentAdviceResponse.cs" />
+    <Compile Include="Entities\QuickTellerCustomerValidationRequest.cs" />
+    <Compile Include="Entities\QuickTellerCustomerValidationResponse.cs" />
+    <Compile Include="Entities\QuicktellerPaymentItemRequest.cs" />
+    <Compile Include="Entities\SendOtpResponse.cs" />
+    <Compile Include="Entities\SMSRequest.cs" />
+    <Compile Include="Entities\sPayBaseRequest.cs" />
+    <Compile Include="Entities\StopChequeRequest.cs" />
+    <Compile Include="Custom Service Reference\AirtimeReference.cs" />
+    <Compile Include="Entities\AccountStatementRequest.cs" />
+    <Compile Include="Entities\AirtimeRequest.cs" />
+    <Compile Include="Entities\ProfieCreationrequest.cs" />
+    <Compile Include="Entities\AccountRequest.cs" />
+    <Compile Include="Entities\BaseRequest.cs" />
+    <Compile Include="Entities\BVNInquiryRequest.cs" />
+    <Compile Include="Entities\GetADUserRequest.cs" />
+    <Compile Include="Entities\IntraBankTransactionRequest.cs" />
+    <Compile Include="Entities\TreasuryBillRequest.cs" />
+    <Compile Include="Entities\UpdateBVNRequest.cs" />
+    <Compile Include="Entities\UpdateServiceRequest.cs" />
+    <Compile Include="Entities\UpgradeRequest.cs" />
+    <Compile Include="Entities\UploadRequest.cs" />
+    <Compile Include="Entities\UserProfile.cs" />
+    <Compile Include="Entities\ValidateOTPResponse.cs" />
+    <Compile Include="Entities\Wakanow\Flight.cs" />
+    <Compile Include="Entities\Wakanow\FlightBookRequest.cs" />
+    <Compile Include="Entities\Wakanow\FlightBookResponse.cs" />
+    <Compile Include="Entities\Wakanow\FlightCombination.cs" />
+    <Compile Include="Entities\Wakanow\FlightSearchRequest.cs" />
+    <Compile Include="Entities\Wakanow\FlightSearchResponse.cs" />
+    <Compile Include="Entities\Wakanow\ProductTermsAndConditions.cs" />
+    <Compile Include="Entities\Wakanow\SelectFlightRequest.cs" />
+    <Compile Include="Entities\Wakanow\SelectFlightResponse.cs" />
+    <Compile Include="Entities\Wakanow\TicketConfirmRequest.cs" />
+    <Compile Include="Entities\Wakanow\TicketConfirmResponse.cs" />
+    <Compile Include="Entities\Wakanow\WakanowAirport.cs" />
+    <Compile Include="Entities\Wakanow\WakanowAuthenticationData.cs" />
+    <Compile Include="Entities\WalletData.cs" />
+    <Compile Include="Extension\InterswitchAuthenticationService.cs" />
+    <Compile Include="Extension\PasswordStorage.cs" />
+    <Compile Include="IServiceCollectionExtension.cs" />
+    <Compile Include="Contracts\IUserService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Configuration\ConfigurationManager.cs" />
+    <Compile Include="Utility\DesiredEncodingStringWriter.cs" />
+    <Compile Include="Utility\ElasticSearchLogger.cs" />
+    <Compile Include="Utility\EntitySystem\DAOSystem.cs" />
+    <Compile Include="Utility\ConnectionProcessor\DataAccessComponent.cs" />
+    <Compile Include="Utility\EntitySystem\EntitySystem.cs" />
+    <Compile Include="Utility\GrayLogUtil.cs" />
+    <Compile Include="Utility\ImplementationBank.cs" />
+    <Compile Include="Utility\Logger.cs" />
+    <Compile Include="Utility\MiddleWareResponseCodes.cs" />
+    <Compile Include="Utility\ResponseCodeTranslator.cs" />
+    <Compile Include="Utility\Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{561777F6-7751-4468-A855-C1E593FD2B1F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blend.ProvidusImplementation</RootNamespace>
+    <AssemblyName>Blend.ProvidusImplementation</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.2\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net46\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net46\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CoreBankingService\AccountServices.cs" />
+    <Compile Include="CoreBankingService\AccountInquiryService.cs" />
+    <Compile Include="CoreBankingService\FundTransferService.cs" />
+    <Compile Include="Custom Service Reference\AirtimeReference.cs" />
+    <Compile Include="Custom Service Reference\AppzoneApiProcessor.cs" />
+    <Compile Include="Migrations\201707211035037_Initial.cs" />
+    <Compile Include="Migrations\201707211035037_Initial.Designer.cs">
+      <DependentUpon>201707211035037_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationService\ISECNotificationService.cs" />
+    <Compile Include="NotificationService\MailService.cs" />
+    <Compile Include="NotificationService\SMSSender.cs" />
+    <Compile Include="Persistence\ApplicationDbContext.cs" />
+    <Compile Include="Persistence\Configuration.cs" />
+    <Compile Include="Persistence\ContextRepository.cs" />
+    <Compile Include="ProfileService\PasswordManager.cs" />
+    <Compile Include="ProfileService\PinManager.cs" />
+    <Compile Include="ProfileService\ProfileManager.cs" />
+    <Compile Include="ProfileService\TokenManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\NFPOutwardService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NIPBVNService.cs" />
+    <Compile Include="Service References\NipWrapperService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OpenAccountService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PNDService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProvidusCBAMiddleware\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProvidusPostingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SharedServices\InterswitchPayCode.cs" />
+    <Compile Include="SharedServices\MobifinService.cs" />
+    <Compile Include="UserService\ActiveDirectoryUserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\NFPOutwardService\Blend.ProvidusImplementation.NFPOutwardService.BranchFundtransfersingleitem_dcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NFPOutwardService\Blend.ProvidusImplementation.NFPOutwardService.BranchNameEnquirySingleitemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NFPOutwardService\Blend.ProvidusImplementation.NFPOutwardService.CIB_Fundtransfersingleitem_dcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NFPOutwardService\Blend.ProvidusImplementation.NFPOutwardService.CIB_NameEnquirySingleitemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NFPOutwardService\Blend.ProvidusImplementation.NFPOutwardService.EbillsFundtransfersingleitem_dcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NFPOutwardService\Blend.ProvidusImplementation.NFPOutwardService.RIB_Fundtransfersingleitem_dcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NFPOutwardService\Blend.ProvidusImplementation.NFPOutwardService.RIB_NameEnquirySingleitemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NFPOutwardService\Blend.ProvidusImplementation.NFPOutwardService.TSQuerySingleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NFPOutwardService\NFPOutwardService_Branch.wsdl" />
+    <None Include="Service References\NipWrapperService\Blend.ProvidusImplementation.NipWrapperService.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NipWrapperService\Blend.ProvidusImplementation.NipWrapperService.fundtransfersingleitem_dcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NipWrapperService\Blend.ProvidusImplementation.NipWrapperService.GetNFPBanksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NipWrapperService\Blend.ProvidusImplementation.NipWrapperService.GetNIBSSChargesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NipWrapperService\Blend.ProvidusImplementation.NipWrapperService.nameenquirysingleitemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NipWrapperService\NipWrapperService.wsdl" />
+    <None Include="Service References\OpenAccountService\AccountService.wsdl" />
+    <None Include="Service References\OpenAccountService\api.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OpenAccountService\Blend.ProvidusImplementation.OpenAccountService.addAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OpenAccountService\Blend.ProvidusImplementation.OpenAccountService.getBranchesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PNDService\BanksMiddleware_PE04RES00.wsdl" />
+    <None Include="Service References\PNDService\Blend.ProvidusImplementation.PNDService.e04res10Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PNDService\Blend.ProvidusImplementation.PNDService.e04res30Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\BanksService.wsdl" />
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.accountExistsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.get21DigitAccountNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getAccountBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getAccountNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getAccountNameWithCusNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getAccountStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getAccountsWithBVNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getAccountsWithCusNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getAccountsWithMobNumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getAccountTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getAccountWithAccountNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getAccountWithPaddingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getAddressLine1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getAddressLine2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getBranchAndAccountNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getCurrencyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getCustomerDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getCustomerNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getDOBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getFirstNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getLedCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getMobileNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getProductNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getSurnameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\Blend.ProvidusImplementation.ProvidusCBAMiddleware.getTotalNIPOutwardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusCBAMiddleware\validate.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProvidusPostingService\BanksMiddleware_PE07EDC00.wsdl" />
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.ActDetlObjUserArray.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.CurrObjUserArray.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edc01Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edc03Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edc04Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edc05Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edc10Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edc14Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edc15Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edc17Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edc18Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edc19Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edcc1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edcd0Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07edcg4Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07pbs10Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07pbs18Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.e07pbs60Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.LoanObjUserArray.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.TdObjUserArray.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProvidusPostingService\Blend.ProvidusImplementation.ProvidusPostingService.TransObjUserArray.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\NFPOutwardService\" />
+    <WCFMetadataStorage Include="Service References\NipWrapperService\" />
+    <WCFMetadataStorage Include="Service References\OpenAccountService\" />
+    <WCFMetadataStorage Include="Service References\PNDService\" />
+    <WCFMetadataStorage Include="Service References\ProvidusCBAMiddleware\" />
+    <WCFMetadataStorage Include="Service References\ProvidusPostingService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppZoneMiddleware.Shared\AppZoneMiddleware.Shared.csproj">
+      <Project>{1DD364F3-3413-4483-8A13-1849A3419AAE}</Project>
+      <Name>AppZoneMiddleware.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProvidusCBAMiddleware\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProvidusCBAMiddleware\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProvidusCBAMiddleware\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProvidusPostingService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProvidusPostingService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProvidusPostingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707211035037_Initial.resx">
+      <DependentUpon>201707211035037_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NFPOutwardService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NFPOutwardService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NFPOutwardService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NipWrapperService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NipWrapperService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NipWrapperService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OpenAccountService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OpenAccountService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OpenAccountService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PNDService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PNDService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PNDService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

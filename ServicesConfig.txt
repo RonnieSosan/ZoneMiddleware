@@ -1,0 +1,1 @@
+{"blend":["user","test","AccountValidation","AccountServices","Notification","Profile","Transfer","User","SharedService","Token"],"zone":["play2","test"],"appzonemiddleware":["service"]}

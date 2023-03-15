@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://providus.com/" targetNamespace="http://providus.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="accountExists" type="tns:accountExists" />
+  <xs:element name="accountExistsResponse" type="tns:accountExistsResponse" />
+  <xs:element name="get21DigitAccountNo" type="tns:get21DigitAccountNo" />
+  <xs:element name="get21DigitAccountNoResponse" type="tns:get21DigitAccountNoResponse" />
+  <xs:element name="getAccountBalance" type="tns:getAccountBalance" />
+  <xs:element name="getAccountBalanceResponse" type="tns:getAccountBalanceResponse" />
+  <xs:element name="getAccountName" type="tns:getAccountName" />
+  <xs:element name="getAccountNameResponse" type="tns:getAccountNameResponse" />
+  <xs:element name="getAccountNameWithCusNum" type="tns:getAccountNameWithCusNum" />
+  <xs:element name="getAccountNameWithCusNumResponse" type="tns:getAccountNameWithCusNumResponse" />
+  <xs:element name="getAccountStatus" type="tns:getAccountStatus" />
+  <xs:element name="getAccountStatusResponse" type="tns:getAccountStatusResponse" />
+  <xs:element name="getAccountType" type="tns:getAccountType" />
+  <xs:element name="getAccountTypeResponse" type="tns:getAccountTypeResponse" />
+  <xs:element name="getAccountWithAccountNo" type="tns:getAccountWithAccountNo" />
+  <xs:element name="getAccountWithAccountNoResponse" type="tns:getAccountWithAccountNoResponse" />
+  <xs:element name="getAccountWithPadding" type="tns:getAccountWithPadding" />
+  <xs:element name="getAccountWithPaddingResponse" type="tns:getAccountWithPaddingResponse" />
+  <xs:element name="getAccountsWithBVN" type="tns:getAccountsWithBVN" />
+  <xs:element name="getAccountsWithBVNResponse" type="tns:getAccountsWithBVNResponse" />
+  <xs:element name="getAccountsWithCusNum" type="tns:getAccountsWithCusNum" />
+  <xs:element name="getAccountsWithCusNumResponse" type="tns:getAccountsWithCusNumResponse" />
+  <xs:element name="getAccountsWithMobNum" type="tns:getAccountsWithMobNum" />
+  <xs:element name="getAccountsWithMobNumResponse" type="tns:getAccountsWithMobNumResponse" />
+  <xs:element name="getAddressLine1" type="tns:getAddressLine1" />
+  <xs:element name="getAddressLine1Response" type="tns:getAddressLine1Response" />
+  <xs:element name="getAddressLine2" type="tns:getAddressLine2" />
+  <xs:element name="getAddressLine2Response" type="tns:getAddressLine2Response" />
+  <xs:element name="getBranchAndAccountName" type="tns:getBranchAndAccountName" />
+  <xs:element name="getBranchAndAccountNameResponse" type="tns:getBranchAndAccountNameResponse" />
+  <xs:element name="getCurrency" type="tns:getCurrency" />
+  <xs:element name="getCurrencyResponse" type="tns:getCurrencyResponse" />
+  <xs:element name="getCustomerDetails" type="tns:getCustomerDetails" />
+  <xs:element name="getCustomerDetailsResponse" type="tns:getCustomerDetailsResponse" />
+  <xs:element name="getCustomerNumber" type="tns:getCustomerNumber" />
+  <xs:element name="getCustomerNumberResponse" type="tns:getCustomerNumberResponse" />
+  <xs:element name="getDOB" type="tns:getDOB" />
+  <xs:element name="getDOBResponse" type="tns:getDOBResponse" />
+  <xs:element name="getEmail" type="tns:getEmail" />
+  <xs:element name="getEmailResponse" type="tns:getEmailResponse" />
+  <xs:element name="getFirstName" type="tns:getFirstName" />
+  <xs:element name="getFirstNameResponse" type="tns:getFirstNameResponse" />
+  <xs:element name="getLedCode" type="tns:getLedCode" />
+  <xs:element name="getLedCodeResponse" type="tns:getLedCodeResponse" />
+  <xs:element name="getMobileNumber" type="tns:getMobileNumber" />
+  <xs:element name="getMobileNumberResponse" type="tns:getMobileNumberResponse" />
+  <xs:element name="getProductName" type="tns:getProductName" />
+  <xs:element name="getProductNameResponse" type="tns:getProductNameResponse" />
+  <xs:element name="getSurname" type="tns:getSurname" />
+  <xs:element name="getSurnameResponse" type="tns:getSurnameResponse" />
+  <xs:element name="getTotalNIPOutward" type="tns:getTotalNIPOutward" />
+  <xs:element name="getTotalNIPOutwardResponse" type="tns:getTotalNIPOutwardResponse" />
+  <xs:complexType name="getCustomerDetails">
+    <xs:sequence>
+      <xs:element name="cus_num" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomerDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountsWithCusNum">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cus_num" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountsWithCusNumResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountWithPadding">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountWithPaddingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAddressLine1">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAddressLine1Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFirstName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFirstNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomerNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomerNumberResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSurname">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSurnameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEmail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEmailResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCurrency">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCurrencyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountNameWithCusNum">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cus_num" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountNameWithCusNumResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="accountExists">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="accountExistsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTotalNIPOutward">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTotalNIPOutwardResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountWithAccountNo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountWithAccountNoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="get21DigitAccountNo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="get21DigitAccountNoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMobileNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMobileNumberResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getBranchAndAccountName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getBranchAndAccountNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAddressLine2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAddressLine2Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountsWithMobNum">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cus_num" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountsWithMobNumResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProductName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProductNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountBalance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountBalanceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountsWithBVN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bvn" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAccountsWithBVNResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDOB">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDOBResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLedCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_no" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLedCodeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

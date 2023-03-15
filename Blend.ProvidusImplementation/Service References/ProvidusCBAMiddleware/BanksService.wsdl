@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://providus.com/" name="BanksService" targetNamespace="http://providus.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://154.113.16.142:9999/AccountValidation/validate?xsd=1" namespace="http://providus.com/" />
+    </xsd:schema>
+  </types>
+  <message name="getCurrency">
+    <part name="parameters" element="tns:getCurrency" />
+  </message>
+  <message name="getCurrencyResponse">
+    <part name="parameters" element="tns:getCurrencyResponse" />
+  </message>
+  <message name="getSurname">
+    <part name="parameters" element="tns:getSurname" />
+  </message>
+  <message name="getSurnameResponse">
+    <part name="parameters" element="tns:getSurnameResponse" />
+  </message>
+  <message name="getAddressLine1">
+    <part name="parameters" element="tns:getAddressLine1" />
+  </message>
+  <message name="getAddressLine1Response">
+    <part name="parameters" element="tns:getAddressLine1Response" />
+  </message>
+  <message name="getFirstName">
+    <part name="parameters" element="tns:getFirstName" />
+  </message>
+  <message name="getFirstNameResponse">
+    <part name="parameters" element="tns:getFirstNameResponse" />
+  </message>
+  <message name="getAddressLine2">
+    <part name="parameters" element="tns:getAddressLine2" />
+  </message>
+  <message name="getAddressLine2Response">
+    <part name="parameters" element="tns:getAddressLine2Response" />
+  </message>
+  <message name="getMobileNumber">
+    <part name="parameters" element="tns:getMobileNumber" />
+  </message>
+  <message name="getMobileNumberResponse">
+    <part name="parameters" element="tns:getMobileNumberResponse" />
+  </message>
+  <message name="getEmail">
+    <part name="parameters" element="tns:getEmail" />
+  </message>
+  <message name="getEmailResponse">
+    <part name="parameters" element="tns:getEmailResponse" />
+  </message>
+  <message name="accountExists">
+    <part name="parameters" element="tns:accountExists" />
+  </message>
+  <message name="accountExistsResponse">
+    <part name="parameters" element="tns:accountExistsResponse" />
+  </message>
+  <message name="getAccountName">
+    <part name="parameters" element="tns:getAccountName" />
+  </message>
+  <message name="getAccountNameResponse">
+    <part name="parameters" element="tns:getAccountNameResponse" />
+  </message>
+  <message name="getAccountType">
+    <part name="parameters" element="tns:getAccountType" />
+  </message>
+  <message name="getAccountTypeResponse">
+    <part name="parameters" element="tns:getAccountTypeResponse" />
+  </message>
+  <message name="getAccountStatus">
+    <part name="parameters" element="tns:getAccountStatus" />
+  </message>
+  <message name="getAccountStatusResponse">
+    <part name="parameters" element="tns:getAccountStatusResponse" />
+  </message>
+  <message name="getProductName">
+    <part name="parameters" element="tns:getProductName" />
+  </message>
+  <message name="getProductNameResponse">
+    <part name="parameters" element="tns:getProductNameResponse" />
+  </message>
+  <message name="getLedCode">
+    <part name="parameters" element="tns:getLedCode" />
+  </message>
+  <message name="getLedCodeResponse">
+    <part name="parameters" element="tns:getLedCodeResponse" />
+  </message>
+  <message name="getDOB">
+    <part name="parameters" element="tns:getDOB" />
+  </message>
+  <message name="getDOBResponse">
+    <part name="parameters" element="tns:getDOBResponse" />
+  </message>
+  <message name="get21DigitAccountNo">
+    <part name="parameters" element="tns:get21DigitAccountNo" />
+  </message>
+  <message name="get21DigitAccountNoResponse">
+    <part name="parameters" element="tns:get21DigitAccountNoResponse" />
+  </message>
+  <message name="getAccountBalance">
+    <part name="parameters" element="tns:getAccountBalance" />
+  </message>
+  <message name="getAccountBalanceResponse">
+    <part name="parameters" element="tns:getAccountBalanceResponse" />
+  </message>
+  <message name="getCustomerDetails">
+    <part name="parameters" element="tns:getCustomerDetails" />
+  </message>
+  <message name="getCustomerDetailsResponse">
+    <part name="parameters" element="tns:getCustomerDetailsResponse" />
+  </message>
+  <message name="getCustomerNumber">
+    <part name="parameters" element="tns:getCustomerNumber" />
+  </message>
+  <message name="getCustomerNumberResponse">
+    <part name="parameters" element="tns:getCustomerNumberResponse" />
+  </message>
+  <message name="getAccountNameWithCusNum">
+    <part name="parameters" element="tns:getAccountNameWithCusNum" />
+  </message>
+  <message name="getAccountNameWithCusNumResponse">
+    <part name="parameters" element="tns:getAccountNameWithCusNumResponse" />
+  </message>
+  <message name="getAccountWithPadding">
+    <part name="parameters" element="tns:getAccountWithPadding" />
+  </message>
+  <message name="getAccountWithPaddingResponse">
+    <part name="parameters" element="tns:getAccountWithPaddingResponse" />
+  </message>
+  <message name="getAccountsWithBVN">
+    <part name="parameters" element="tns:getAccountsWithBVN" />
+  </message>
+  <message name="getAccountsWithBVNResponse">
+    <part name="parameters" element="tns:getAccountsWithBVNResponse" />
+  </message>
+  <message name="getBranchAndAccountName">
+    <part name="parameters" element="tns:getBranchAndAccountName" />
+  </message>
+  <message name="getBranchAndAccountNameResponse">
+    <part name="parameters" element="tns:getBranchAndAccountNameResponse" />
+  </message>
+  <message name="getAccountsWithMobNum">
+    <part name="parameters" element="tns:getAccountsWithMobNum" />
+  </message>
+  <message name="getAccountsWithMobNumResponse">
+    <part name="parameters" element="tns:getAccountsWithMobNumResponse" />
+  </message>
+  <message name="getAccountsWithCusNum">
+    <part name="parameters" element="tns:getAccountsWithCusNum" />
+  </message>
+  <message name="getAccountsWithCusNumResponse">
+    <part name="parameters" element="tns:getAccountsWithCusNumResponse" />
+  </message>
+  <message name="getAccountWithAccountNo">
+    <part name="parameters" element="tns:getAccountWithAccountNo" />
+  </message>
+  <message name="getAccountWithAccountNoResponse">
+    <part name="parameters" element="tns:getAccountWithAccountNoResponse" />
+  </message>
+  <message name="getTotalNIPOutward">
+    <part name="parameters" element="tns:getTotalNIPOutward" />
+  </message>
+  <message name="getTotalNIPOutwardResponse">
+    <part name="parameters" element="tns:getTotalNIPOutwardResponse" />
+  </message>
+  <portType name="IBanks">
+    <operation name="getCurrency">
+      <input message="tns:getCurrency" />
+      <output message="tns:getCurrencyResponse" />
+    </operation>
+    <operation name="getSurname">
+      <input message="tns:getSurname" />
+      <output message="tns:getSurnameResponse" />
+    </operation>
+    <operation name="getAddressLine1">
+      <input message="tns:getAddressLine1" />
+      <output message="tns:getAddressLine1Response" />
+    </operation>
+    <operation name="getFirstName">
+      <input message="tns:getFirstName" />
+      <output message="tns:getFirstNameResponse" />
+    </operation>
+    <operation name="getAddressLine2">
+      <input message="tns:getAddressLine2" />
+      <output message="tns:getAddressLine2Response" />
+    </operation>
+    <operation name="getMobileNumber">
+      <input message="tns:getMobileNumber" />
+      <output message="tns:getMobileNumberResponse" />
+    </operation>
+    <operation name="getEmail">
+      <input message="tns:getEmail" />
+      <output message="tns:getEmailResponse" />
+    </operation>
+    <operation name="accountExists">
+      <input message="tns:accountExists" />
+      <output message="tns:accountExistsResponse" />
+    </operation>
+    <operation name="getAccountName">
+      <input message="tns:getAccountName" />
+      <output message="tns:getAccountNameResponse" />
+    </operation>
+    <operation name="getAccountType">
+      <input message="tns:getAccountType" />
+      <output message="tns:getAccountTypeResponse" />
+    </operation>
+    <operation name="getAccountStatus">
+      <input message="tns:getAccountStatus" />
+      <output message="tns:getAccountStatusResponse" />
+    </operation>
+    <operation name="getProductName">
+      <input message="tns:getProductName" />
+      <output message="tns:getProductNameResponse" />
+    </operation>
+    <operation name="getLedCode">
+      <input message="tns:getLedCode" />
+      <output message="tns:getLedCodeResponse" />
+    </operation>
+    <operation name="getDOB">
+      <input message="tns:getDOB" />
+      <output message="tns:getDOBResponse" />
+    </operation>
+    <operation name="get21DigitAccountNo">
+      <input message="tns:get21DigitAccountNo" />
+      <output message="tns:get21DigitAccountNoResponse" />
+    </operation>
+    <operation name="getAccountBalance">
+      <input message="tns:getAccountBalance" />
+      <output message="tns:getAccountBalanceResponse" />
+    </operation>
+    <operation name="getCustomerDetails">
+      <input message="tns:getCustomerDetails" />
+      <output message="tns:getCustomerDetailsResponse" />
+    </operation>
+    <operation name="getCustomerNumber">
+      <input message="tns:getCustomerNumber" />
+      <output message="tns:getCustomerNumberResponse" />
+    </operation>
+    <operation name="getAccountNameWithCusNum">
+      <input message="tns:getAccountNameWithCusNum" />
+      <output message="tns:getAccountNameWithCusNumResponse" />
+    </operation>
+    <operation name="getAccountWithPadding">
+      <input message="tns:getAccountWithPadding" />
+      <output message="tns:getAccountWithPaddingResponse" />
+    </operation>
+    <operation name="getAccountsWithBVN">
+      <input message="tns:getAccountsWithBVN" />
+      <output message="tns:getAccountsWithBVNResponse" />
+    </operation>
+    <operation name="getBranchAndAccountName">
+      <input message="tns:getBranchAndAccountName" />
+      <output message="tns:getBranchAndAccountNameResponse" />
+    </operation>
+    <operation name="getAccountsWithMobNum">
+      <input message="tns:getAccountsWithMobNum" />
+      <output message="tns:getAccountsWithMobNumResponse" />
+    </operation>
+    <operation name="getAccountsWithCusNum">
+      <input message="tns:getAccountsWithCusNum" />
+      <output message="tns:getAccountsWithCusNumResponse" />
+    </operation>
+    <operation name="getAccountWithAccountNo">
+      <input message="tns:getAccountWithAccountNo" />
+      <output message="tns:getAccountWithAccountNoResponse" />
+    </operation>
+    <operation name="getTotalNIPOutward">
+      <input message="tns:getTotalNIPOutward" />
+      <output message="tns:getTotalNIPOutwardResponse" />
+    </operation>
+  </portType>
+  <binding name="BanksPortBinding" type="tns:IBanks">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getCurrency">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getSurname">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAddressLine1">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFirstName">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAddressLine2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getMobileNumber">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getEmail">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="accountExists">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountName">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountType">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getProductName">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getLedCode">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getDOB">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="get21DigitAccountNo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountBalance">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCustomerDetails">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCustomerNumber">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountNameWithCusNum">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountWithPadding">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountsWithBVN">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getBranchAndAccountName">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountsWithMobNum">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountsWithCusNum">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountWithAccountNo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getTotalNIPOutward">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="BanksService">
+    <port name="BanksPort" binding="tns:BanksPortBinding">
+      <soap:address location="http://154.113.16.142:9999/AccountValidation/validate" />
+    </port>
+  </service>
+</definitions>

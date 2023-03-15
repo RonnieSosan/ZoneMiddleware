@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AppZoneMiddleware.Shared.Entities
+{
+    public class ActivateFxTrxRequest : BaseRequest
+    {
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
+        public string PAN { get; set; }
+        public string Countries { get; set; }
+    }
+
+    public class ActivateFxTrxResponse : BaseResponse { }
+}

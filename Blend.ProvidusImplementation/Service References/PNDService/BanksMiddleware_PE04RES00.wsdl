@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WL5G3N0:definitions xmlns:WL5G3N2="http://com/icsfs/banks/ws/BanksMiddleware_PE04RES00.wsdl" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N1="http://www.w3.org/2001/XMLSchema" xmlns="" name="BanksMiddleware_PE04RES00" targetNamespace="http://com/icsfs/banks/ws/BanksMiddleware_PE04RES00.wsdl" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/">
+  <WL5G3N0:types />
+  <WL5G3N0:message name="BanksMiddleware_PE04RES00_e04res10">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="fBraCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="fCusNum" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="fCurCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="fLedCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="fSubAcctCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="fRestCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="fTextRest" type="WL5G3N1:string" />
+    <WL5G3N0:part name="fAcctRestSeq_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outRetStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE04RES00_e04res10Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="fAcctRestSeq_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outRetStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE04RES00_e04res30">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="fBraCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="fCusNum" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="fCurCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="fLedCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="fSubAcctCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="fAcctRestSeq" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outRetStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE04RES00_e04res30Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outRetStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="BanksMiddleware_PE04RES00">
+    <WL5G3N0:operation name="e04res10" parameterOrder="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout fBraCode fCusNum fCurCode fLedCode fSubAcctCode fRestCode fTextRest fAcctRestSeq_out outRetStatus_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N2:BanksMiddleware_PE04RES00_e04res10" />
+      <WL5G3N0:output message="WL5G3N2:BanksMiddleware_PE04RES00_e04res10Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e04res30" parameterOrder="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout fBraCode fCusNum fCurCode fLedCode fSubAcctCode fAcctRestSeq outRetStatus_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N2:BanksMiddleware_PE04RES00_e04res30" />
+      <WL5G3N0:output message="WL5G3N2:BanksMiddleware_PE04RES00_e04res30Response" />
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="BanksMiddleware_PE04RES00" type="WL5G3N2:BanksMiddleware_PE04RES00">
+    <WL5G3N3:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <WL5G3N0:operation name="e04res10">
+      <WL5G3N3:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE04RES00.wsdl/e04res10" />
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE04RES00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout fBraCode fCusNum fCurCode fLedCode fSubAcctCode fRestCode fTextRest fAcctRestSeq_out outRetStatus_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE04RES00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout fAcctRestSeq_out outRetStatus_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e04res30">
+      <WL5G3N3:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE04RES00.wsdl/e04res30" />
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE04RES00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout fBraCode fCusNum fCurCode fLedCode fSubAcctCode fAcctRestSeq outRetStatus_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE04RES00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outRetStatus_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="BanksMiddleware_PE04RES00">
+    <WL5G3N0:port name="BanksMiddleware_PE04RES00Port" binding="WL5G3N2:BanksMiddleware_PE04RES00">
+      <WL5G3N3:address location="http://192.168.1.245:7001/BanksESB_PA04TDE00/BanksMiddleware_PE04RES00Port" />
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

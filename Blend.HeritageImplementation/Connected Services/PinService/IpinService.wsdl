@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Logon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogonResult" type="tns:LogonResp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LogonResp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NextChallenge" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Successful" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetrievePIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NextToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Bin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Last4Pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExpDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrievePINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrievePINResult" type="tns:OperationResp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OperationResp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Successful" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NextChallenge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCardDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NextToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCardDetailsResult" type="tns:GetCardsResp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCardsResp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Successful" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="tns:ArrayOfCard" />
+          <s:element minOccurs="0" maxOccurs="1" name="NextChallenge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCard">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Card" nillable="true" type="tns:Card" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Card">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Last4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LogonSoapIn">
+    <wsdl:part name="parameters" element="tns:Logon" />
+  </wsdl:message>
+  <wsdl:message name="LogonSoapOut">
+    <wsdl:part name="parameters" element="tns:LogonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrievePINSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrievePIN" />
+  </wsdl:message>
+  <wsdl:message name="RetrievePINSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrievePINResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCardDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetCardDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCardDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IpinServiceSoap">
+    <wsdl:operation name="Logon">
+      <wsdl:input message="tns:LogonSoapIn" />
+      <wsdl:output message="tns:LogonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePIN">
+      <wsdl:input message="tns:RetrievePINSoapIn" />
+      <wsdl:output message="tns:RetrievePINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetails">
+      <wsdl:input message="tns:GetCardDetailsSoapIn" />
+      <wsdl:output message="tns:GetCardDetailsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IpinServiceSoap" type="tns:IpinServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Logon">
+      <soap:operation soapAction="http://tempuri.org/Logon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePIN">
+      <soap:operation soapAction="http://tempuri.org/RetrievePIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetails">
+      <soap:operation soapAction="http://tempuri.org/GetCardDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IpinServiceSoap12" type="tns:IpinServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Logon">
+      <soap12:operation soapAction="http://tempuri.org/Logon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePIN">
+      <soap12:operation soapAction="http://tempuri.org/RetrievePIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetCardDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IpinService">
+    <wsdl:port name="IpinServiceSoap" binding="tns:IpinServiceSoap">
+      <soap:address location="http://10.0.38.39/IpinService/ipinservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IpinServiceSoap12" binding="tns:IpinServiceSoap12">
+      <soap12:address location="http://10.0.38.39/IpinService/ipinservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

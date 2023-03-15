@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://providus.com/" targetNamespace="http://providus.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addAccount" type="tns:addAccount" />
+  <xs:element name="addAccountResponse" type="tns:addAccountResponse" />
+  <xs:element name="getBranches" type="tns:getBranches" />
+  <xs:element name="getBranchesResponse" type="tns:getBranchesResponse" />
+  <xs:complexType name="addAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ref_num" type="xs:string" />
+      <xs:element minOccurs="0" name="bvn" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile_no" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="bra_code" type="xs:string" />
+      <xs:element name="account_type" type="xs:int" />
+      <xs:element minOccurs="0" name="surname" type="xs:string" />
+      <xs:element minOccurs="0" name="first_name" type="xs:string" />
+      <xs:element minOccurs="0" name="account_name" type="xs:string" />
+      <xs:element minOccurs="0" name="address_line1" type="xs:string" />
+      <xs:element minOccurs="0" name="address_line2" type="xs:string" />
+      <xs:element minOccurs="0" name="id_image_url" type="xs:string" />
+      <xs:element minOccurs="0" name="photo_image_url" type="xs:string" />
+      <xs:element minOccurs="0" name="date_of_birth" type="xs:string" />
+      <xs:element minOccurs="0" name="gender" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getBranches">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getBranchesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

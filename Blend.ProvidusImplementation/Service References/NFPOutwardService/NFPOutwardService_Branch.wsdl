@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="txnstatusquerysingleitem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="o" type="tns:TSQuerySingleRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TSQuerySingleRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SourceInstitutionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChannelCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="txnstatusquerysingleitemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="txnstatusquerysingleitemResult" type="tns:TSQuerySingleResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TSQuerySingleResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SourceInstitutionCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChannelCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCustomerCummulativeAmount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="myCustomerSourceAccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerCummulativeAmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerCummulativeAmountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BranchNameEnquirySingleitem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="myDestinationBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myChannelCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mySourceAccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BranchNameEnquirySingleitemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BranchNameEnquirySingleitemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="BranchFundtransfersingleitem_dc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="myDestinationBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myChannelCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myCustDestinationAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myAccountName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myOriginatorName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myNarration" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myPaymentReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myCustomerSourceAccountNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TranType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BranchFundtransfersingleitem_dcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BranchFundtransfersingleitem_dcResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RIB_NameEnquirySingleitem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="myDestinationBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myChannelCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mySourceAccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RIB_NameEnquirySingleitemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RIB_NameEnquirySingleitemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RIB_Fundtransfersingleitem_dc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="myDestinationBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myChannelCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myCustDestinationAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myAccountName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myOriginatorName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myNarration" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myPaymentReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myCustomerSourceAccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RIB_Fundtransfersingleitem_dcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RIB_Fundtransfersingleitem_dcResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CIB_NameEnquirySingleitem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="myDestinationBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myChannelCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mySourceAccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CIB_NameEnquirySingleitemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CIB_NameEnquirySingleitemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CIB_Fundtransfersingleitem_dc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="myDestinationBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myChannelCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myCustDestinationAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myAccountName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myOriginatorName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myNarration" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myPaymentReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myCustomerSourceAccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CIB_Fundtransfersingleitem_dcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CIB_Fundtransfersingleitem_dcResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EbillsFundtransfersingleitem_dc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="myDestinationBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myChannelCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myCustDestinationAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myAccountName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myOriginatorName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myNarration" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myPaymentReference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myCustomerSourceAccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EbillsFundtransfersingleitem_dcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EbillsFundtransfersingleitem_dcResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNIBSSCharges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="myAmountCharge" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNIBSSChargesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNIBSSChargesResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNFPBanks">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNFPBanksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNFPBanksResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="txnstatusquerysingleitemSoapIn">
+    <wsdl:part name="parameters" element="tns:txnstatusquerysingleitem" />
+  </wsdl:message>
+  <wsdl:message name="txnstatusquerysingleitemSoapOut">
+    <wsdl:part name="parameters" element="tns:txnstatusquerysingleitemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerCummulativeAmountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerCummulativeAmount" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerCummulativeAmountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerCummulativeAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="BranchNameEnquirySingleitemSoapIn">
+    <wsdl:part name="parameters" element="tns:BranchNameEnquirySingleitem" />
+  </wsdl:message>
+  <wsdl:message name="BranchNameEnquirySingleitemSoapOut">
+    <wsdl:part name="parameters" element="tns:BranchNameEnquirySingleitemResponse" />
+  </wsdl:message>
+  <wsdl:message name="BranchNameEnquirySingleitemAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="BranchFundtransfersingleitem_dcSoapIn">
+    <wsdl:part name="parameters" element="tns:BranchFundtransfersingleitem_dc" />
+  </wsdl:message>
+  <wsdl:message name="BranchFundtransfersingleitem_dcSoapOut">
+    <wsdl:part name="parameters" element="tns:BranchFundtransfersingleitem_dcResponse" />
+  </wsdl:message>
+  <wsdl:message name="BranchFundtransfersingleitem_dcAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="RIB_NameEnquirySingleitemSoapIn">
+    <wsdl:part name="parameters" element="tns:RIB_NameEnquirySingleitem" />
+  </wsdl:message>
+  <wsdl:message name="RIB_NameEnquirySingleitemSoapOut">
+    <wsdl:part name="parameters" element="tns:RIB_NameEnquirySingleitemResponse" />
+  </wsdl:message>
+  <wsdl:message name="RIB_NameEnquirySingleitemAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="RIB_Fundtransfersingleitem_dcSoapIn">
+    <wsdl:part name="parameters" element="tns:RIB_Fundtransfersingleitem_dc" />
+  </wsdl:message>
+  <wsdl:message name="RIB_Fundtransfersingleitem_dcSoapOut">
+    <wsdl:part name="parameters" element="tns:RIB_Fundtransfersingleitem_dcResponse" />
+  </wsdl:message>
+  <wsdl:message name="RIB_Fundtransfersingleitem_dcAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CIB_NameEnquirySingleitemSoapIn">
+    <wsdl:part name="parameters" element="tns:CIB_NameEnquirySingleitem" />
+  </wsdl:message>
+  <wsdl:message name="CIB_NameEnquirySingleitemSoapOut">
+    <wsdl:part name="parameters" element="tns:CIB_NameEnquirySingleitemResponse" />
+  </wsdl:message>
+  <wsdl:message name="CIB_NameEnquirySingleitemAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CIB_Fundtransfersingleitem_dcSoapIn">
+    <wsdl:part name="parameters" element="tns:CIB_Fundtransfersingleitem_dc" />
+  </wsdl:message>
+  <wsdl:message name="CIB_Fundtransfersingleitem_dcSoapOut">
+    <wsdl:part name="parameters" element="tns:CIB_Fundtransfersingleitem_dcResponse" />
+  </wsdl:message>
+  <wsdl:message name="CIB_Fundtransfersingleitem_dcAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="EbillsFundtransfersingleitem_dcSoapIn">
+    <wsdl:part name="parameters" element="tns:EbillsFundtransfersingleitem_dc" />
+  </wsdl:message>
+  <wsdl:message name="EbillsFundtransfersingleitem_dcSoapOut">
+    <wsdl:part name="parameters" element="tns:EbillsFundtransfersingleitem_dcResponse" />
+  </wsdl:message>
+  <wsdl:message name="EbillsFundtransfersingleitem_dcAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetNIBSSChargesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNIBSSCharges" />
+  </wsdl:message>
+  <wsdl:message name="GetNIBSSChargesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNIBSSChargesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNFPBanksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNFPBanks" />
+  </wsdl:message>
+  <wsdl:message name="GetNFPBanksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNFPBanksResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NFPOutwardService_BranchSoap">
+    <wsdl:operation name="txnstatusquerysingleitem">
+      <wsdl:input message="tns:txnstatusquerysingleitemSoapIn" />
+      <wsdl:output message="tns:txnstatusquerysingleitemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCummulativeAmount">
+      <wsdl:input message="tns:GetCustomerCummulativeAmountSoapIn" />
+      <wsdl:output message="tns:GetCustomerCummulativeAmountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BranchNameEnquirySingleitem">
+      <wsdl:input message="tns:BranchNameEnquirySingleitemSoapIn" />
+      <wsdl:output message="tns:BranchNameEnquirySingleitemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BranchFundtransfersingleitem_dc">
+      <wsdl:input message="tns:BranchFundtransfersingleitem_dcSoapIn" />
+      <wsdl:output message="tns:BranchFundtransfersingleitem_dcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RIB_NameEnquirySingleitem">
+      <wsdl:input message="tns:RIB_NameEnquirySingleitemSoapIn" />
+      <wsdl:output message="tns:RIB_NameEnquirySingleitemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RIB_Fundtransfersingleitem_dc">
+      <wsdl:input message="tns:RIB_Fundtransfersingleitem_dcSoapIn" />
+      <wsdl:output message="tns:RIB_Fundtransfersingleitem_dcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CIB_NameEnquirySingleitem">
+      <wsdl:input message="tns:CIB_NameEnquirySingleitemSoapIn" />
+      <wsdl:output message="tns:CIB_NameEnquirySingleitemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CIB_Fundtransfersingleitem_dc">
+      <wsdl:input message="tns:CIB_Fundtransfersingleitem_dcSoapIn" />
+      <wsdl:output message="tns:CIB_Fundtransfersingleitem_dcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EbillsFundtransfersingleitem_dc">
+      <wsdl:input message="tns:EbillsFundtransfersingleitem_dcSoapIn" />
+      <wsdl:output message="tns:EbillsFundtransfersingleitem_dcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNIBSSCharges">
+      <wsdl:input message="tns:GetNIBSSChargesSoapIn" />
+      <wsdl:output message="tns:GetNIBSSChargesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNFPBanks">
+      <wsdl:input message="tns:GetNFPBanksSoapIn" />
+      <wsdl:output message="tns:GetNFPBanksSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NFPOutwardService_BranchSoap" type="tns:NFPOutwardService_BranchSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="txnstatusquerysingleitem">
+      <soap:operation soapAction="http://tempuri.org/txnstatusquerysingleitem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCummulativeAmount">
+      <soap:operation soapAction="http://tempuri.org/GetCustomerCummulativeAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BranchNameEnquirySingleitem">
+      <soap:operation soapAction="http://tempuri.org/BranchNameEnquirySingleitem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BranchNameEnquirySingleitemAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BranchFundtransfersingleitem_dc">
+      <soap:operation soapAction="http://tempuri.org/BranchFundtransfersingleitem_dc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BranchFundtransfersingleitem_dcAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RIB_NameEnquirySingleitem">
+      <soap:operation soapAction="http://tempuri.org/RIB_NameEnquirySingleitem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RIB_NameEnquirySingleitemAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RIB_Fundtransfersingleitem_dc">
+      <soap:operation soapAction="http://tempuri.org/RIB_Fundtransfersingleitem_dc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RIB_Fundtransfersingleitem_dcAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CIB_NameEnquirySingleitem">
+      <soap:operation soapAction="http://tempuri.org/CIB_NameEnquirySingleitem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CIB_NameEnquirySingleitemAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CIB_Fundtransfersingleitem_dc">
+      <soap:operation soapAction="http://tempuri.org/CIB_Fundtransfersingleitem_dc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CIB_Fundtransfersingleitem_dcAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EbillsFundtransfersingleitem_dc">
+      <soap:operation soapAction="http://tempuri.org/EbillsFundtransfersingleitem_dc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EbillsFundtransfersingleitem_dcAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNIBSSCharges">
+      <soap:operation soapAction="http://tempuri.org/GetNIBSSCharges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNFPBanks">
+      <soap:operation soapAction="http://tempuri.org/GetNFPBanks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NFPOutwardService_BranchSoap12" type="tns:NFPOutwardService_BranchSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="txnstatusquerysingleitem">
+      <soap12:operation soapAction="http://tempuri.org/txnstatusquerysingleitem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCummulativeAmount">
+      <soap12:operation soapAction="http://tempuri.org/GetCustomerCummulativeAmount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BranchNameEnquirySingleitem">
+      <soap12:operation soapAction="http://tempuri.org/BranchNameEnquirySingleitem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BranchNameEnquirySingleitemAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BranchFundtransfersingleitem_dc">
+      <soap12:operation soapAction="http://tempuri.org/BranchFundtransfersingleitem_dc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BranchFundtransfersingleitem_dcAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RIB_NameEnquirySingleitem">
+      <soap12:operation soapAction="http://tempuri.org/RIB_NameEnquirySingleitem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RIB_NameEnquirySingleitemAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RIB_Fundtransfersingleitem_dc">
+      <soap12:operation soapAction="http://tempuri.org/RIB_Fundtransfersingleitem_dc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RIB_Fundtransfersingleitem_dcAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CIB_NameEnquirySingleitem">
+      <soap12:operation soapAction="http://tempuri.org/CIB_NameEnquirySingleitem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CIB_NameEnquirySingleitemAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CIB_Fundtransfersingleitem_dc">
+      <soap12:operation soapAction="http://tempuri.org/CIB_Fundtransfersingleitem_dc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CIB_Fundtransfersingleitem_dcAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EbillsFundtransfersingleitem_dc">
+      <soap12:operation soapAction="http://tempuri.org/EbillsFundtransfersingleitem_dc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EbillsFundtransfersingleitem_dcAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNIBSSCharges">
+      <soap12:operation soapAction="http://tempuri.org/GetNIBSSCharges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNFPBanks">
+      <soap12:operation soapAction="http://tempuri.org/GetNFPBanks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NFPOutwardService_Branch">
+    <wsdl:port name="NFPOutwardService_BranchSoap" binding="tns:NFPOutwardService_BranchSoap">
+      <soap:address location="http://172.16.10.14:88/NipOutward/NFPOutwardService_Branch.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NFPOutwardService_BranchSoap12" binding="tns:NFPOutwardService_BranchSoap12">
+      <soap12:address location="http://172.16.10.14:88/NipOutward/NFPOutwardService_Branch.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

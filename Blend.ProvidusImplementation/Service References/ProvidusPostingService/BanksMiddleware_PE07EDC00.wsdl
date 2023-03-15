@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WL5G3N0:definitions xmlns:WL5G3N3="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" xmlns:WL5G3N2="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/types/" xmlns:WL5G3N1="http://www.w3.org/2001/XMLSchema" xmlns:WL5G3N4="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="" name="BanksMiddleware_PE07EDC00" targetNamespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/">
+  <WL5G3N0:types>
+    <xsd:schema xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns0="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/types/" xmlns:tns="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/types/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" elementFormDefault="qualified" targetNamespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/types/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="TransObjUserArray">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="TransObjUser" nillable="true" type="tns:TransObjUser" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TransObjUser">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:TransObjBase">
+            <xsd:sequence>
+              <xsd:element name="valDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element name="intDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element name="traAmt" nillable="true" type="xsd:decimal" />
+              <xsd:element name="traSeq1" nillable="true" type="xsd:decimal" />
+              <xsd:element name="traSeq2" nillable="true" type="xsd:decimal" />
+              <xsd:element name="explNat" nillable="true" type="xsd:string" />
+              <xsd:element name="curCode" nillable="true" type="xsd:decimal" />
+              <xsd:element name="remarks" nillable="true" type="xsd:string" />
+              <xsd:element name="drCrDesc" nillable="true" type="xsd:string" />
+              <xsd:element name="balAfter" nillable="true" type="xsd:decimal" />
+              <xsd:element name="docNum" nillable="true" type="xsd:decimal" />
+              <xsd:element name="acctKey" nillable="true" type="xsd:string" />
+              <xsd:element name="traDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element name="explEng" nillable="true" type="xsd:string" />
+              <xsd:element name="drCrInd" nillable="true" type="xsd:decimal" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="TransObjBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:complexType name="ActDetlObjUserArray">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ActDetlObjUser" nillable="true" type="tns:ActDetlObjUser" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ActDetlObjUser">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ActDetlObjBase">
+            <xsd:sequence>
+              <xsd:element name="lableRefLan" nillable="true" type="xsd:string" />
+              <xsd:element name="lableNatLan" nillable="true" type="xsd:string" />
+              <xsd:element name="value3" nillable="true" type="xsd:string" />
+              <xsd:element name="value1" nillable="true" type="xsd:string" />
+              <xsd:element name="value2" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ActDetlObjBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:complexType name="TdObjUserArray">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="TdObjUser" nillable="true" type="tns:TdObjUser" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TdObjUser">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:TdObjBase">
+            <xsd:sequence>
+              <xsd:element name="valDate" nillable="true" type="xsd:string" />
+              <xsd:element name="othRelAcct" nillable="true" type="xsd:string" />
+              <xsd:element name="intDate" nillable="true" type="xsd:string" />
+              <xsd:element name="ledCode" nillable="true" type="xsd:decimal" />
+              <xsd:element name="matDate" nillable="true" type="xsd:string" />
+              <xsd:element name="intAtMat" nillable="true" type="xsd:decimal" />
+              <xsd:element name="cleBal" nillable="true" type="xsd:decimal" />
+              <xsd:element name="ledCodeDesc" nillable="true" type="xsd:string" />
+              <xsd:element name="noOfMonths" nillable="true" type="xsd:decimal" />
+              <xsd:element name="altCurCode" nillable="true" type="xsd:string" />
+              <xsd:element name="subAcctCode" nillable="true" type="xsd:decimal" />
+              <xsd:element name="cusNum" nillable="true" type="xsd:decimal" />
+              <xsd:element name="avaBal" nillable="true" type="xsd:decimal" />
+              <xsd:element name="cusShoName" nillable="true" type="xsd:string" />
+              <xsd:element name="tdProdType" nillable="true" type="xsd:decimal" />
+              <xsd:element name="initDepDays" nillable="true" type="xsd:decimal" />
+              <xsd:element name="crntBal" nillable="true" type="xsd:decimal" />
+              <xsd:element name="curRenFlag" nillable="true" type="xsd:decimal" />
+              <xsd:element name="curCode" nillable="true" type="xsd:decimal" />
+              <xsd:element name="prodTypeDesc" nillable="true" type="xsd:string" />
+              <xsd:element name="intRate" nillable="true" type="xsd:decimal" />
+              <xsd:element name="depDays" nillable="true" type="xsd:decimal" />
+              <xsd:element name="debCreInd" nillable="true" type="xsd:string" />
+              <xsd:element name="tdFunFlag" nillable="true" type="xsd:decimal" />
+              <xsd:element name="braCode" nillable="true" type="xsd:decimal" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="TdObjBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:complexType name="LoanObjUserArray">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="LoanObjUser" nillable="true" type="tns:LoanObjUser" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LoanObjUser">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:LoanObjBase">
+            <xsd:sequence>
+              <xsd:element name="balance" nillable="true" type="xsd:decimal" />
+              <xsd:element name="lastInsDate" nillable="true" type="xsd:string" />
+              <xsd:element name="subAcctCode" nillable="true" type="xsd:decimal" />
+              <xsd:element name="curCode" nillable="true" type="xsd:decimal" />
+              <xsd:element name="braCode" nillable="true" type="xsd:decimal" />
+              <xsd:element name="ledCode" nillable="true" type="xsd:decimal" />
+              <xsd:element name="lastInsAmt" nillable="true" type="xsd:decimal" />
+              <xsd:element name="cusNum" nillable="true" type="xsd:decimal" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="LoanObjBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:complexType name="CurrObjUserArray">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CurrObjUser" nillable="true" type="tns:CurrObjUser" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CurrObjUser">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:CurrObjBase">
+            <xsd:sequence>
+              <xsd:element name="closRate" nillable="true" type="xsd:decimal" />
+              <xsd:element name="altCurCode" nillable="true" type="xsd:string" />
+              <xsd:element name="buyRate" nillable="true" type="xsd:decimal" />
+              <xsd:element name="isoCurCode" nillable="true" type="xsd:decimal" />
+              <xsd:element name="sellRate" nillable="true" type="xsd:decimal" />
+              <xsd:element name="spotRate" nillable="true" type="xsd:decimal" />
+              <xsd:element name="curCode" nillable="true" type="xsd:decimal" />
+              <xsd:element name="midRate" nillable="true" type="xsd:decimal" />
+              <xsd:element name="fixRate" nillable="true" type="xsd:decimal" />
+              <xsd:element name="desEng" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="CurrObjBase">
+        <xsd:sequence />
+      </xsd:complexType>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc01">
+    <WL5G3N0:part name="inpAcctKey" type="WL5G3N1:string" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="curDesEng_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="curDesNat_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="ledDesEng_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="ledDesNat_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="staCode_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="othRelAcct_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="crntBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="cleBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="forAmt_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="totBloFund_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="availBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="matDate_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="minMonCleBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="minMonCrntBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="riskLim_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="balLim_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="aveBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="intAccChg_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="intLasChg_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="totIntChg_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="intAccPai_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="intLasPai_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="totIntPai_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="cusShoName_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="name1_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="name2_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="address1_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="address2_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc01Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="curDesEng_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="curDesNat_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="ledDesEng_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="ledDesNat_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="staCode_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="othRelAcct_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="crntBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="cleBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="forAmt_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="totBloFund_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="availBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="matDate_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="minMonCleBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="minMonCrntBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="riskLim_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="balLim_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="aveBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="intAccChg_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="intLasChg_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="totIntChg_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="intAccPai_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="intLasPai_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="totIntPai_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="cusShoName_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="name1_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="name2_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="address1_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="address2_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc03">
+    <WL5G3N0:part name="inpAcctKey" type="WL5G3N1:string" />
+    <WL5G3N0:part name="noOfRecs" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="allTra_out" type="WL5G3N2:TransObjUserArray" />
+    <WL5G3N0:part name="staCode_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outNumRec_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc03Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="allTra_out" type="WL5G3N2:TransObjUserArray" />
+    <WL5G3N0:part name="staCode_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outNumRec_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc04">
+    <WL5G3N0:part name="inpAcctKey" type="WL5G3N1:string" />
+    <WL5G3N0:part name="traSeq" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="fromDate" type="WL5G3N1:string" />
+    <WL5G3N0:part name="toDate1" type="WL5G3N1:string" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="allTra_out" type="WL5G3N2:TransObjUserArray" />
+    <WL5G3N0:part name="staCode_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc04Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="allTra_out" type="WL5G3N2:TransObjUserArray" />
+    <WL5G3N0:part name="staCode_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc05">
+    <WL5G3N0:part name="inpAcctFrom" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpAcctTo" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpTraAmt" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpSouCode" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpDevId" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpType" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="crRemarks" type="WL5G3N1:string" />
+    <WL5G3N0:part name="drRemarks" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpCardNumber" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpStan" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpSwitchDate" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpRrn" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpAuthCode" type="WL5G3N1:string" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="fromBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="toAmt_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="traSeq1_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc05Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="fromBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="toAmt_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="traSeq1_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc10">
+    <WL5G3N0:part name="inpAcctFrom" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpCompCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpServCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpServNum" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpTraAmt" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpSouCode" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpDevId" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpRemarks" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpCardNumber" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpStan" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpSwitchDate" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpRrn" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpAuthCode" type="WL5G3N1:string" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="fromBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="toAmt_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="traSeq1_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc10Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="fromBal_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="toAmt_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="traSeq1_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc14">
+    <WL5G3N0:part name="inpLoginId" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpBraCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpCusNum" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outBraCode_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outOpenDate_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCusShortName_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCusStatus_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCusEmail_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCusMobile_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outSrvcMob1_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outLang_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outTitCode_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outNameLine1_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outNameLine2_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCustAdd1_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCustAdd2_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outPOBox_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCityLocCode_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outPostCode_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outResidFlag_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outResidCountry_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outNationality_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outSocialNum_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outTelNum_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outTelNum2_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDepType_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outPrimAcct_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outBirthDate_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outNationalNum_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outFaxNum_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outTown_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outState_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outBPlace_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outProvince_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDistrict_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc14Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outBraCode_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outOpenDate_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCusShortName_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCusStatus_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCusEmail_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCusMobile_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outSrvcMob1_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outLang_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outTitCode_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outNameLine1_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outNameLine2_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCustAdd1_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCustAdd2_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outPOBox_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outCityLocCode_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outPostCode_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outResidFlag_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outResidCountry_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outNationality_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outSocialNum_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outTelNum_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outTelNum2_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDepType_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outPrimAcct_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outBirthDate_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outNationalNum_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outFaxNum_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outTown_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outState_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outBPlace_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outProvince_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDistrict_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc15">
+    <WL5G3N0:part name="inpAcctKey" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpPgsPerBook" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpDevId" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpSouCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc15Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc17">
+    <WL5G3N0:part name="cusNum" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpAcctKey" type="WL5G3N1:string" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="acctData_out" type="WL5G3N2:ActDetlObjUserArray" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc17Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="acctData_out" type="WL5G3N2:ActDetlObjUserArray" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc18">
+    <WL5G3N0:part name="inpBraCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpCusNum" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="reqLanInd" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum" type="WL5G3N1:string" />
+    <WL5G3N0:part name="tdsSmsTab_out" type="WL5G3N2:TdObjUserArray" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc18Response">
+    <WL5G3N0:part name="tdsSmsTab_out" type="WL5G3N2:TdObjUserArray" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc19">
+    <WL5G3N0:part name="inpCusNum" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="loansSmsTab_out" type="WL5G3N2:LoanObjUserArray" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edc19Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="loansSmsTab_out" type="WL5G3N2:LoanObjUserArray" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edcc1">
+    <WL5G3N0:part name="cusNum" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpCurCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="rateData_out" type="WL5G3N2:CurrObjUserArray" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edcc1Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="rateData_out" type="WL5G3N2:CurrObjUserArray" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edcd0">
+    <WL5G3N0:part name="inpAcctKey" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpSouCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChequeNo" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edcd0Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edcg4">
+    <WL5G3N0:part name="inpCompCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpServCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpCustId" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpBillNo" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpServNum" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpAcctKey" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpPaidAmt" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpSouCode" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpDevId" type="WL5G3N1:string" />
+    <WL5G3N0:part name="inpPayerName" type="WL5G3N1:string" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07edcg4Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07pbs10">
+    <WL5G3N0:part name="inpCurCode" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="retString_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07pbs10Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="retString_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07pbs18">
+    <WL5G3N0:part name="inpCurCode" type="WL5G3N1:string" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="retString_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07pbs18Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="retString_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07pbs60">
+    <WL5G3N0:part name="inpAcctKey" type="WL5G3N1:string" />
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="BanksMiddleware_PE07EDC00_e07pbs60Response">
+    <WL5G3N0:part name="reqLanInd_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelId_inout" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="inpChannelRefNum_inout" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outReqId_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outStatus_out" type="WL5G3N1:decimal" />
+    <WL5G3N0:part name="outMsgTxt_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="outDetInfo_out" type="WL5G3N1:string" />
+    <WL5G3N0:part name="dbAppErr_out" type="WL5G3N1:decimal" />
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="BanksMiddleware_PE07EDC00">
+    <WL5G3N0:operation name="e07edc01" parameterOrder="inpAcctKey reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout curDesEng_out curDesNat_out ledDesEng_out ledDesNat_out staCode_out othRelAcct_out crntBal_out cleBal_out forAmt_out totBloFund_out availBal_out matDate_out minMonCleBal_out minMonCrntBal_out riskLim_out balLim_out aveBal_out intAccChg_out intLasChg_out totIntChg_out intAccPai_out intLasPai_out totIntPai_out cusShoName_out name1_out name2_out address1_out address2_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc01" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc01Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc03" parameterOrder="inpAcctKey noOfRecs reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout allTra_out staCode_out outNumRec_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc03" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc03Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc04" parameterOrder="inpAcctKey traSeq fromDate toDate1 reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout allTra_out staCode_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc04" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc04Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc05" parameterOrder="inpAcctFrom inpAcctTo inpTraAmt inpSouCode inpDevId inpType crRemarks drRemarks inpCardNumber inpStan inpSwitchDate inpRrn inpAuthCode reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout fromBal_out toAmt_out traSeq1_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc05" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc05Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc10" parameterOrder="inpAcctFrom inpCompCode inpServCode inpServNum inpTraAmt inpSouCode inpDevId inpRemarks inpCardNumber inpStan inpSwitchDate inpRrn inpAuthCode reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout fromBal_out toAmt_out traSeq1_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc10" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc10Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc14" parameterOrder="inpLoginId inpBraCode inpCusNum reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outBraCode_out outOpenDate_out outCusShortName_out outCusStatus_out outCusEmail_out outCusMobile_out outSrvcMob1_out outLang_out outTitCode_out outNameLine1_out outNameLine2_out outCustAdd1_out outCustAdd2_out outPOBox_out outCityLocCode_out outPostCode_out outResidFlag_out outResidCountry_out outNationality_out outSocialNum_out outTelNum_out outTelNum2_out outDepType_out outPrimAcct_out outBirthDate_out outNationalNum_out outFaxNum_out outTown_out outState_out outBPlace_out outProvince_out outDistrict_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc14" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc14Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc15" parameterOrder="inpAcctKey inpPgsPerBook inpDevId inpSouCode reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc15" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc15Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc17" parameterOrder="cusNum inpAcctKey reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout acctData_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc17" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc17Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc18" parameterOrder="inpBraCode inpCusNum reqLanInd inpChannelId inpChannelRefNum tdsSmsTab_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc18" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc18Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc19" parameterOrder="inpCusNum reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout loansSmsTab_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc19" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edc19Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edcc1" parameterOrder="cusNum inpCurCode reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout rateData_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edcc1" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edcc1Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edcd0" parameterOrder="inpAcctKey inpSouCode inpChequeNo reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edcd0" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edcd0Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edcg4" parameterOrder="inpCompCode inpServCode inpCustId inpBillNo inpServNum inpAcctKey inpPaidAmt inpSouCode inpDevId inpPayerName reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edcg4" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07edcg4Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07pbs10" parameterOrder="inpCurCode reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout retString_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07pbs10" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07pbs10Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07pbs18" parameterOrder="inpCurCode reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout retString_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07pbs18" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07pbs18Response" />
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07pbs60" parameterOrder="inpAcctKey reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out">
+      <WL5G3N0:input message="WL5G3N3:BanksMiddleware_PE07EDC00_e07pbs60" />
+      <WL5G3N0:output message="WL5G3N3:BanksMiddleware_PE07EDC00_e07pbs60Response" />
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="BanksMiddleware_PE07EDC00" type="WL5G3N3:BanksMiddleware_PE07EDC00">
+    <WL5G3N4:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <WL5G3N0:operation name="e07edc01">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edc01" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpAcctKey reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout curDesEng_out curDesNat_out ledDesEng_out ledDesNat_out staCode_out othRelAcct_out crntBal_out cleBal_out forAmt_out totBloFund_out availBal_out matDate_out minMonCleBal_out minMonCrntBal_out riskLim_out balLim_out aveBal_out intAccChg_out intLasChg_out totIntChg_out intAccPai_out intLasPai_out totIntPai_out cusShoName_out name1_out name2_out address1_out address2_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout curDesEng_out curDesNat_out ledDesEng_out ledDesNat_out staCode_out othRelAcct_out crntBal_out cleBal_out forAmt_out totBloFund_out availBal_out matDate_out minMonCleBal_out minMonCrntBal_out riskLim_out balLim_out aveBal_out intAccChg_out intLasChg_out totIntChg_out intAccPai_out intLasPai_out totIntPai_out cusShoName_out name1_out name2_out address1_out address2_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc03">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edc03" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpAcctKey noOfRecs reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout allTra_out staCode_out outNumRec_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout allTra_out staCode_out outNumRec_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc04">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edc04" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpAcctKey traSeq fromDate toDate1 reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout allTra_out staCode_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout allTra_out staCode_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc05">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edc05" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpAcctFrom inpAcctTo inpTraAmt inpSouCode inpDevId inpType crRemarks drRemarks inpCardNumber inpStan inpSwitchDate inpRrn inpAuthCode reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout fromBal_out toAmt_out traSeq1_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout fromBal_out toAmt_out traSeq1_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc10">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edc10" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpAcctFrom inpCompCode inpServCode inpServNum inpTraAmt inpSouCode inpDevId inpRemarks inpCardNumber inpStan inpSwitchDate inpRrn inpAuthCode reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout fromBal_out toAmt_out traSeq1_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout fromBal_out toAmt_out traSeq1_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc14">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edc14" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpLoginId inpBraCode inpCusNum reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outBraCode_out outOpenDate_out outCusShortName_out outCusStatus_out outCusEmail_out outCusMobile_out outSrvcMob1_out outLang_out outTitCode_out outNameLine1_out outNameLine2_out outCustAdd1_out outCustAdd2_out outPOBox_out outCityLocCode_out outPostCode_out outResidFlag_out outResidCountry_out outNationality_out outSocialNum_out outTelNum_out outTelNum2_out outDepType_out outPrimAcct_out outBirthDate_out outNationalNum_out outFaxNum_out outTown_out outState_out outBPlace_out outProvince_out outDistrict_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outBraCode_out outOpenDate_out outCusShortName_out outCusStatus_out outCusEmail_out outCusMobile_out outSrvcMob1_out outLang_out outTitCode_out outNameLine1_out outNameLine2_out outCustAdd1_out outCustAdd2_out outPOBox_out outCityLocCode_out outPostCode_out outResidFlag_out outResidCountry_out outNationality_out outSocialNum_out outTelNum_out outTelNum2_out outDepType_out outPrimAcct_out outBirthDate_out outNationalNum_out outFaxNum_out outTown_out outState_out outBPlace_out outProvince_out outDistrict_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc15">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edc15" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpAcctKey inpPgsPerBook inpDevId inpSouCode reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc17">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edc17" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="cusNum inpAcctKey reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout acctData_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout acctData_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc18">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edc18" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpBraCode inpCusNum reqLanInd inpChannelId inpChannelRefNum tdsSmsTab_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="tdsSmsTab_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edc19">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edc19" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpCusNum reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout loansSmsTab_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout loansSmsTab_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edcc1">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edcc1" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="cusNum inpCurCode reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout rateData_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout rateData_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edcd0">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edcd0" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpAcctKey inpSouCode inpChequeNo reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07edcg4">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07edcg4" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpCompCode inpServCode inpCustId inpBillNo inpServNum inpAcctKey inpPaidAmt inpSouCode inpDevId inpPayerName reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07pbs10">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07pbs10" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpCurCode reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout retString_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout retString_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07pbs18">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07pbs18" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpCurCode reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout retString_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout retString_out outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="e07pbs60">
+      <WL5G3N4:operation soapAction="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl/e07pbs60" />
+      <WL5G3N0:input>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="inpAcctKey reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal" namespace="http://com/icsfs/banks/ws/BanksMiddleware_PE07EDC00.wsdl" parts="reqLanInd_inout inpChannelId_inout inpChannelRefNum_inout outReqId_out outStatus_out outMsgTxt_out outDetInfo_out dbAppErr_out" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="BanksMiddleware_PE07EDC00">
+    <WL5G3N0:port name="BanksMiddleware_PE07EDC00Port" binding="WL5G3N3:BanksMiddleware_PE07EDC00">
+      <WL5G3N4:address location="http://192.168.1.245:7001/BanksESB_PE07EDC00/BanksMiddleware_PE07EDC00Port" />
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>
